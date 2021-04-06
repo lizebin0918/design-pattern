@@ -1,8 +1,4 @@
-package com.lzb;
-
-import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+package com.lzb.tank;
 
 /**
  * 坦克大战（学习设计模式）<br/>

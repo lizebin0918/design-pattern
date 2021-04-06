@@ -1,4 +1,4 @@
-package com.lzb;
+package com.lzb.tank;
 
 import java.awt.*;
 import java.awt.event.*;
