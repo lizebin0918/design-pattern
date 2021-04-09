@@ -1,4 +1,4 @@
-package com.lzb.design.pattern.decorator;
+package com.lzb.head_first.decorator;
 
 public class ConcreteComponent implements AbstractComponent {
 

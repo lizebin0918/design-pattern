@@ -1,4 +1,4 @@
-package com.lzb.design.pattern.singleton;
+package com.lzb.head_first.singleton;
 
 
 public class SingletonNested {

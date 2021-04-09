@@ -1,4 +1,4 @@
-package com.lzb.design.pattern.proxy;
+package com.lzb.head_first.proxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

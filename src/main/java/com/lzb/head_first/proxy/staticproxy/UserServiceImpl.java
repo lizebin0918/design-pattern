@@ -1,4 +1,4 @@
-package com.lzb.design.pattern.proxy.staticproxy;
+package com.lzb.head_first.proxy.staticproxy;
 public class UserServiceImpl implements UserService {
 
  

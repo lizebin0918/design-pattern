@@ -1,4 +1,4 @@
-package com.lzb.design.pattern.proxy.jdk;
+package com.lzb.head_first.proxy.jdk;
 public interface Service {
 
       public void sayHello(String name);

@@ -1,4 +1,4 @@
-package com.lzb.design.pattern.proxy;
+package com.lzb.head_first.proxy;
 
 public class RealSubject implements Subject {
 	public void doSomething() {

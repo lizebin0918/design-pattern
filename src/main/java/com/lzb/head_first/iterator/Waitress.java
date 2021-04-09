@@ -1,4 +1,4 @@
-package com.lzb.design.pattern.iterator;
+package com.lzb.head_first.iterator;
 
 public class Waitress {
 

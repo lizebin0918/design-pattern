@@ -1,9 +1,9 @@
-package com.lzb.design.pattern.proxy.cglib;
-
-import java.lang.reflect.Method;
+package com.lzb.head_first.proxy.cglib;
 
 import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.cglib.proxy.MethodProxy;
+
+import java.lang.reflect.Method;
 
 public class CglibProxy implements MethodInterceptor {
 

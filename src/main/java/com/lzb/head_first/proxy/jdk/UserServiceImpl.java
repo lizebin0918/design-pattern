@@ -1,6 +1,4 @@
-package com.lzb.design.pattern.proxy.jdk;
-
-import com.lzb.design.pattern.proxy.staticproxy.UserService;
+package com.lzb.head_first.proxy.jdk;
 
 public class UserServiceImpl {
 
