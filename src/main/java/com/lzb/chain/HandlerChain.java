@@ -19,7 +19,7 @@ public class HandlerChain {
 
     public void handler() {
         if (head != null) {
-            head.handler();
+            head.handle();
         }
     }
 

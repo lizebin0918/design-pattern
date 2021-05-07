@@ -10,10 +10,7 @@ import java.util.Objects;
 public class HandlerA extends Handler {
 
     @Override
-    public void handler() {
+    public void doHandler() {
         System.out.println("HandlerA 的处理逻辑......");
-        if (Objects.nonNull(successor)) {
-            successor.handler();
-        }
     }
 }
