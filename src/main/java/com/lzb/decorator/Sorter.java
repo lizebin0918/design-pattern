@@ -16,6 +16,10 @@ public class Sorter {
         ranges.add(new SortFactory.SortRange(500, Integer.MAX_VALUE, SortFactory.getSort("quickSort")));
     }
 
+    /**
+     * 通过遍历匹配类型，避免多个地方if-else
+     * @param array
+     */
     public void sort(int[] array) {
         int size = array.length;
         ISort sort = null;

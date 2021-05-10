@@ -11,11 +11,13 @@ import static com.lzb.state.Main2.State.*;
 public class Main2 {
 
     public static void main(String[] args) {
-
+        MarioStateMachine mario = new MarioStateMachine();
+        mario.obtainMushRoom();
+        System.out.println("score:" + mario.score + ";state:" + mario.state);
     }
 
     enum Event {
-        GO_MUSHROOM(0),
+        GOT_MUSHROOM(0),
         GOT_CAPE(1),
         GOT_FIRE(2),
         MET_MONSTER(3);
@@ -35,6 +37,14 @@ public class Main2 {
         SMALL(0), SUPER(1), FIRE(2), CAPE(3);
         private int value;
         private State(int value) {
+            this.value = value;
+        }
+
+        public int getValue() {
+            return value;
+        }
+
+        public void setValue(int value) {
             this.value = value;
         }
     }
@@ -63,15 +73,26 @@ public class Main2 {
         }
 
         public void obtainMushRoom() {
-
+            executeEvent(Event.GOT_MUSHROOM);
         }
 
         public void obtainCape() {
-
+            executeEvent(Event.GOT_CAPE);
         }
 
         public void obtainFireFlower() {
+            executeEvent(Event.GOT_FIRE);
+        }
 
+        public void meetMonster() {
+            executeEvent(Event.MET_MONSTER);
+        }
+
+        private void executeEvent(Event event) {
+            int stateValue = state.getValue();
+            int eventValue = event.getValue();
+            this.state = transitionTable[stateValue][eventValue];
+            this.score = actionTable[stateValue][eventValue];
         }
     }
 
