@@ -4,7 +4,7 @@ package com.lzb.state;
  * Created on : 2021-05-07 16:42
  * @author chenpi 
  */
-public class Main {
+public class Main1 {
 
     public static void main(String[] args) {
         MarioStateMachine mario = new MarioStateMachine();
