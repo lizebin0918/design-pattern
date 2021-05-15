@@ -1,4 +1,4 @@
-package com.lzb.decorator;
+package com.lzb.strategy;
 /**
  * 归并排序<br/>
  * Created on : 2021-05-07 00:30

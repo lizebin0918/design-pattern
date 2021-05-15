@@ -1,4 +1,4 @@
-package com.lzb.decorator;
+package com.lzb.strategy;
 /**
  * 排序接口<br/>
  * Created on : 2021-05-07 00:29
