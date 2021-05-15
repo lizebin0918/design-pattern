@@ -27,3 +27,5 @@
    * `com.lzb.state`:状态模式
    * `com.lzb.strategy`:策略者模式，封装各种算法实现
    * `com.lzb.delegate`:委派模式，老板->项目经理->员工
+   * `com.lzb.adapter`:适配器模式
+   * `com.lzb.template`:模板模式
