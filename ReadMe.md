@@ -20,3 +20,10 @@
     
 #### 接口隔离原则（ISP）
    * 接口行为尽可能细化
+   
+#### 具体代码
+   * `com.lzb.decorator`:煎饼+鸡蛋+火腿肠
+   * `com.lzb.chain`:责任链
+   * `com.lzb.state`:状态模式
+   * `com.lzb.strategy`:策略者模式，封装各种算法实现
+   * `com.lzb.delegate`:委派模式，老板->项目经理->员工
