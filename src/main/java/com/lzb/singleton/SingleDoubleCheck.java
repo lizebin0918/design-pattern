@@ -1,4 +1,4 @@
-package com.lzb.head_first.singleton;
+package com.lzb.singleton;
 
 import java.util.*;
 import java.util.concurrent.*;

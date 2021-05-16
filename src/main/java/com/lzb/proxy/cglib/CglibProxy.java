@@ -1,4 +1,4 @@
-package com.lzb.head_first.proxy.cglib;
+package com.lzb.proxy.cglib;
 
 import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.cglib.proxy.MethodProxy;

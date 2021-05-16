@@ -22,10 +22,14 @@
    * 接口行为尽可能细化
    
 #### 具体代码
-   * `com.lzb.decorator`:煎饼+鸡蛋+火腿肠
+
+   * `com.lzb.decorator`:装饰者模式（煎饼+鸡蛋+火腿肠）：在不改变原始类接口的情况下，对原始类功能进行增强，并且支持多个装饰器的嵌套使用
    * `com.lzb.chain`:责任链
    * `com.lzb.state`:状态模式
    * `com.lzb.strategy`:策略者模式，封装各种算法实现
    * `com.lzb.delegate`:委派模式，老板->项目经理->员工
-   * `com.lzb.adapter`:适配器模式
+   * `com.lzb.adapter`:适配器模式：事后补救策略。提供跟原始类不同的接口，而代理模式、装饰器模式提供的都是跟原始类相同的接口
    * `com.lzb.template`:模板模式
+   * `com.lzb.proxy`:代理模式（动态代理+静态代理）:不改变原始类接口的条件下，为原始类定义一个代理类，主要目的是控制访问，而非加强功能
+   * `com.lzb.singleton`:单例模式（线程安全）
+   * `com.lzb.iterator`:迭代器模式

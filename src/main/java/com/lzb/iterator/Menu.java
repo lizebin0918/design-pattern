@@ -1,4 +1,4 @@
-package com.lzb.head_first.iterator;
+package com.lzb.iterator;
 
 import java.util.ArrayList;
 import java.util.Iterator;

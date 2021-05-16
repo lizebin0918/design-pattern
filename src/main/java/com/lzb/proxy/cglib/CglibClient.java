@@ -1,7 +1,7 @@
-package com.lzb.head_first.proxy.cglib;
+package com.lzb.proxy.cglib;
 
 
-import com.lzb.head_first.proxy.jdk.UserServiceImpl;
+import com.lzb.proxy.jdk.UserServiceImpl;
 import org.springframework.cglib.proxy.Enhancer;
 
 public class CglibClient {

@@ -1,4 +1,4 @@
-package com.lzb.head_first.proxy.staticproxy;
+package com.lzb.proxy.staticproxy;
 public interface UserService {  
     public void addUser(String userId,String userName);  
     public void delUser(String userId);  

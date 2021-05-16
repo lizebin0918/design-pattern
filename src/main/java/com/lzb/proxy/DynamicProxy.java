@@ -1,4 +1,4 @@
-package com.lzb.head_first.proxy;
+package com.lzb.proxy;
 
 import java.lang.reflect.Proxy;
 

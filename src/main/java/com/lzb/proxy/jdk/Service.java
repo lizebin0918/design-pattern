@@ -1,4 +1,4 @@
-package com.lzb.head_first.proxy.jdk;
+package com.lzb.proxy.jdk;
 public interface Service {
 
       public void sayHello(String name);

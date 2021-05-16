@@ -1,4 +1,4 @@
-package com.lzb.head_first.iterator;
+package com.lzb.iterator;
 
 public class MenuItem extends MenuComponent {
 

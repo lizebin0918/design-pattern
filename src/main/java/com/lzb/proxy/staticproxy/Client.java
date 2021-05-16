@@ -1,4 +1,4 @@
-package com.lzb.head_first.proxy.staticproxy;
+package com.lzb.proxy.staticproxy;
 public class Client {
 
          public static void main(String[] args) {
