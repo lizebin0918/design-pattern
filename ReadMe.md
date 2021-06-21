@@ -39,3 +39,4 @@
     * 解决分布式事务问题
    * `com.lzb.composition`:树状结构的抽象，将单个对象和组合对象看作是树的节点
    * `com.lzb.command`:把请求包含的数据和处理逻辑封装为命令对象
+   * `com.lzb.observer`:观察者模式（同步、异步）
