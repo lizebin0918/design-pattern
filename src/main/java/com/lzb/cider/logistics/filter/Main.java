@@ -1,10 +1,7 @@
 package com.lzb.cider.logistics.filter;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * 订单根据后台配置的物流规则，选出符合规则的物流渠道<br/>
@@ -20,7 +17,7 @@ public class Main {
 
         Rule rule = new Rule("只走中国和法国", 1, Arrays.asList(new Channel("中国物流"), new Channel("Cider自建物流")));
         rule.add(new WeigthFilter(BigDecimal.ZERO, BigDecimal.TEN));
-        rule.add(new CountryFilter(Arrays.asList("China", "France")));
+        rule.add(CountryFilter.getInstance(Set.of("China", "France")));
 
 
         // 数据库查询

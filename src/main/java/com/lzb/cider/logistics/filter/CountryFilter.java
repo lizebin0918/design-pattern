@@ -1,8 +1,8 @@
 package com.lzb.cider.logistics.filter;
 
-import lombok.AllArgsConstructor;
-
-import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 规则明细<br/>
@@ -10,13 +10,23 @@ import java.util.List;
  *
  * @author lizebin
  */
-@AllArgsConstructor
 public class CountryFilter extends Filter {
 
-    private List<String> countries;
+    private final Set<String> countries;
+
+    private static final Map<Set<String>, CountryFilter> CACHE = new ConcurrentHashMap<>();
 
     @Override
     public boolean doHandler(Order order) {
         return countries.contains(order.getCountry());
     }
+
+    private CountryFilter(Set<String> countries) {
+        this.countries = countries;
+    }
+
+    public static CountryFilter getInstance(Set<String> conturies) {
+        return CACHE.computeIfAbsent(conturies, CountryFilter::new);
+    }
+
 }
