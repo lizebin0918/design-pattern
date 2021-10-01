@@ -1,4 +1,6 @@
-package com.lzb.cider.logistics.filter;
+package com.lzb.cider.logistics.component.filter;
+
+import com.lzb.cider.logistics.Order;
 
 import java.math.BigDecimal;
 import java.util.Map;
@@ -12,12 +14,14 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class AmountFilter extends Filter {
 
+    public static final String NAME = "amount";
+
     private final BigDecimal min, max;
 
     private static final String FORMAT = "%s:%s";
 
     @Override
-    public boolean doHandler(Order order) {
+    public boolean doFilter(Order order) {
         BigDecimal amount = order.getAmount();
         return amount.compareTo(min) > 0 && amount.compareTo(max) < 0;
     }

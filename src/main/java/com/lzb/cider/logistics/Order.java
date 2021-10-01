@@ -1,7 +1,9 @@
-package com.lzb.cider.logistics.filter;
+package com.lzb.cider.logistics;
 
+import com.lzb.cider.logistics.component.entity.Channel;
+import com.lzb.cider.logistics.component.entity.Country;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 
 import java.math.BigDecimal;
 
@@ -11,7 +13,7 @@ import java.math.BigDecimal;
  *
  * @author lizebin
  */
-@Data
+@Getter
 @AllArgsConstructor
 public class Order {
 
@@ -25,10 +27,10 @@ public class Order {
     /**
      * 国家
      */
-    private String country;
+    private Country country;
 
     /**
-     * 重量
+     * 渠道:shopify/shopify_us
      */
-    private BigDecimal weight;
+    private Channel channel;
 }

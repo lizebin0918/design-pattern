@@ -1,4 +1,6 @@
-package com.lzb.cider.logistics.filter;
+package com.lzb.cider.logistics.component.filter;
+
+import com.lzb.cider.logistics.Order;
 
 /**
  * Handler<br/>
@@ -14,10 +16,10 @@ public abstract class Filter {
         this.next = next;
     }
 
-    public final boolean handle(Order order) {
-        boolean isNext = doHandler(order);
+    public final boolean filter(Order order) {
+        boolean isNext = doFilter(order);
         if (next != null && isNext) {
-            return next.handle(order);
+            return next.filter(order);
         }
         return isNext;
     }
@@ -26,6 +28,6 @@ public abstract class Filter {
      * 过滤逻辑
      * @return
      */
-    public abstract boolean doHandler(Order order);
+    public abstract boolean doFilter(Order order);
 
 }
