@@ -5,8 +5,6 @@ import com.lzb.cider.logistics.component.entity.Country;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -21,7 +19,7 @@ public class Main {
         Order order1 = new Order(1, BigDecimal.ZERO, new Country("England"), new Channel("pc"));
         Order order2 = new Order(2, BigDecimal.ZERO, new Country("China"), new Channel("shopify"));
 
-        Rule rule = new Rule("只走中国和法国", 1,
+        /*Rule rule = new Rule("只走中国和法国", 1,
                 Arrays.asList(new Channel("中国物流"), new Channel("Cider自建物流")));
         rule.initFilter(
                 "{\n" +
@@ -43,7 +41,7 @@ public class Main {
                 "    \"remark\": {\n" +
                 "        \"include\": [\"\"]\n" +
                 "    }\n" +
-                "}");
+                "}");*/
 
 
         // 数据库查询
@@ -51,9 +49,9 @@ public class Main {
         orderList.add(order1);
         orderList.add(order2);
         List<Rule> ruleList = new ArrayList<>();
-        ruleList.add(rule);
+        // ruleList.add(rule);
 
-        for (Order orderItem : orderList) {
+        /*for (Order orderItem : orderList) {
             List<Channel> channelList = new LinkedList<>();
             for (Rule ruleItem : ruleList) {
                 if (ruleItem.filter(orderItem)) {
@@ -61,7 +59,7 @@ public class Main {
                 }
             }
             System.out.println("订单-" + orderItem.getOid() + ",匹配物流渠道数:" + channelList.size());
-        }
+        }*/
     }
 
 }

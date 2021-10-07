@@ -1,10 +1,11 @@
 package com.lzb.cider.logistics.component.filter;
 
 import com.lzb.cider.logistics.Order;
+import com.lzb.cider.logistics.RuleContent;
 import com.lzb.cider.logistics.component.entity.Channel;
+import lombok.EqualsAndHashCode;
 
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.Set;
 
 /**
  * 渠道过滤<br/>
@@ -12,24 +13,19 @@ import java.util.concurrent.ConcurrentHashMap;
  *
  * @author lizebin
  */
+@EqualsAndHashCode(callSuper = false)
 public class ChannelFilter extends Filter {
-
-    public static final String NAME = "channel";
 
     private final Set<Channel> channels;
 
-    private static final Map<Set<Channel>, ChannelFilter> CACHE = new ConcurrentHashMap<>();
+    public ChannelFilter(RuleContent ruleContent) {
+        super(ruleContent);
+        channels = ruleContent.getChannels();
+    }
 
     @Override
     public boolean doFilter(Order order) {
         return channels.contains(order.getChannel());
     }
 
-    private ChannelFilter(Set<Channel> channels) {
-        this.channels = channels;
-    }
-
-    public static ChannelFilter getInstance(Set<Channel> channels) {
-        return CACHE.computeIfAbsent(channels, ChannelFilter::new);
-    }
 }

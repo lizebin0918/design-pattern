@@ -1,10 +1,11 @@
 package com.lzb.cider.logistics.component.filter;
 
 import com.lzb.cider.logistics.Order;
+import com.lzb.cider.logistics.RuleContent;
+import com.lzb.cider.logistics.component.entity.Range;
+import lombok.EqualsAndHashCode;
 
 import java.math.BigDecimal;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 金额过滤<br/>
@@ -12,36 +13,20 @@ import java.util.concurrent.ConcurrentHashMap;
  *
  * @author lizebin
  */
+@EqualsAndHashCode(callSuper = false)
 public class AmountFilter extends Filter {
 
-    public static final String NAME = "amount";
+    private final Range range;
 
-    private final BigDecimal min, max;
-
-    private static final String FORMAT = "%s:%s";
+    public AmountFilter(RuleContent ruleContent) {
+        super(ruleContent);
+        range = ruleContent.getAmountRange();
+    }
 
     @Override
     public boolean doFilter(Order order) {
         BigDecimal amount = order.getAmount();
-        return amount.compareTo(min) > 0 && amount.compareTo(max) < 0;
-    }
-
-    private AmountFilter(BigDecimal min, BigDecimal max) {
-        this.min = min;
-        this.max = max;
-    }
-
-    private static final Map<String, AmountFilter> CACHE = new ConcurrentHashMap<>();
-
-    /**
-     * 获取实例
-     * @param min
-     * @param max
-     * @return
-     */
-    public static AmountFilter getInstance(final String min, final String max) {
-        return CACHE.computeIfAbsent(String.format(FORMAT, min, max),
-                key -> new AmountFilter(new BigDecimal(min), new BigDecimal(max)));
+        return amount.compareTo(range.getMin()) > 0 && amount.compareTo(range.getMax()) < 0;
     }
 
 }

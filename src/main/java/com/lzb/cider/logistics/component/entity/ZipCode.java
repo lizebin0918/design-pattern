@@ -1,6 +1,7 @@
 package com.lzb.cider.logistics.component.entity;
 
-import java.util.Objects;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 
 /**
  * 邮政编码<br/>
@@ -8,29 +9,10 @@ import java.util.Objects;
  *
  * @author lizebin
  */
+@EqualsAndHashCode
+@AllArgsConstructor
 public class ZipCode {
 
-    private final String name;
-
-    public ZipCode(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof ZipCode)) return false;
-        ZipCode zipCode = (ZipCode) o;
-        return Objects.equals(name, zipCode.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name);
-    }
-
-    public String getName() {
-        return name;
-    }
+    private final String value;
 
 }

@@ -1,6 +1,7 @@
 package com.lzb.cider.logistics.component.entity;
 
-import java.util.Objects;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 
 /**
  * 物流渠道<br/>
@@ -8,28 +9,10 @@ import java.util.Objects;
  *
  * @author lizebin
  */
+@EqualsAndHashCode
+@AllArgsConstructor
 public class Channel {
 
-    private final String name;
+    private final String value;
 
-    public Channel(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Channel)) return false;
-        Channel channel = (Channel) o;
-        return Objects.equals(name, channel.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name);
-    }
 }

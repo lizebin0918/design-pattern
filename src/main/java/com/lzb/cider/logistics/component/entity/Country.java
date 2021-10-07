@@ -1,6 +1,7 @@
 package com.lzb.cider.logistics.component.entity;
 
-import java.util.Objects;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 
 /**
  * 国家<br/>
@@ -8,28 +9,10 @@ import java.util.Objects;
  *
  * @author lizebin
  */
+@EqualsAndHashCode
+@AllArgsConstructor
 public class Country {
 
-    private final String name;
+    private final String value;
 
-    public Country(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Country)) return false;
-        Country country = (Country) o;
-        return Objects.equals(name, country.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name);
-    }
-
-    public String getName() {
-        return name;
-    }
 }

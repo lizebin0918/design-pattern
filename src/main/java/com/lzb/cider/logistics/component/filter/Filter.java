@@ -1,6 +1,7 @@
 package com.lzb.cider.logistics.component.filter;
 
 import com.lzb.cider.logistics.Order;
+import com.lzb.cider.logistics.RuleContent;
 
 /**
  * Handler<br/>
@@ -11,6 +12,11 @@ import com.lzb.cider.logistics.Order;
 public abstract class Filter {
 
     protected Filter next = null;
+    protected RuleContent ruleContent;
+
+    public Filter(RuleContent ruleContent) {
+        this.ruleContent = ruleContent;
+    }
 
     public void setNext(Filter next) {
         this.next = next;

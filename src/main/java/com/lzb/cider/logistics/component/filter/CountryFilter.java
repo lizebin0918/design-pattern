@@ -1,10 +1,11 @@
 package com.lzb.cider.logistics.component.filter;
 
 import com.lzb.cider.logistics.Order;
+import com.lzb.cider.logistics.RuleContent;
+import com.lzb.cider.logistics.component.entity.Country;
+import lombok.EqualsAndHashCode;
 
-import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 国家过滤<br/>
@@ -12,25 +13,19 @@ import java.util.concurrent.ConcurrentHashMap;
  *
  * @author lizebin
  */
+@EqualsAndHashCode(callSuper = false)
 public class CountryFilter extends Filter {
 
-    public static final String NAME = "country";
+    private Set<Country> countries;
 
-    private final Set<String> countries;
-
-    private static final Map<Set<String>, CountryFilter> CACHE = new ConcurrentHashMap<>();
+    public CountryFilter(RuleContent ruleContent) {
+        super(ruleContent);
+        countries = ruleContent.getCountries();
+    }
 
     @Override
     public boolean doFilter(Order order) {
         return countries.contains(order.getCountry());
-    }
-
-    private CountryFilter(Set<String> countries) {
-        this.countries = countries;
-    }
-
-    public static CountryFilter getInstance(Set<String> conturies) {
-        return CACHE.computeIfAbsent(conturies, CountryFilter::new);
     }
 
 }
