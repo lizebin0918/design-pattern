@@ -24,7 +24,7 @@ public class RuleContent {
     /**
      * 国家邮编
      */
-    private Set<CountryAndZipCode> countryAndZipCodes;
+    private Set<CountryAndZipCode> countryAndZipCode;
 
     /**
      * 国家

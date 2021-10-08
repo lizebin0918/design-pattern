@@ -1,5 +1,6 @@
 package com.lzb.cider.logistics;
 
+import com.lzb.cider.logistics.component.filter.FilterChainFactory;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -11,8 +12,8 @@ import lombok.Getter;
  * @author lizebin
  */
 @Getter
-@AllArgsConstructor
 @EqualsAndHashCode
+@AllArgsConstructor
 public class Rule {
 
     /**
@@ -30,7 +31,13 @@ public class Rule {
      */
     private final RuleContent ruleContent;
 
+    public boolean doFilter(Order order) {
+        return FilterChainFactory.createFilterChain(ruleContent).doFilter(order);
+    }
 
-
+    /**
+     * 匹配结果
+     */
+    private final String result;
 
 }

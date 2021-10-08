@@ -5,6 +5,7 @@ import com.lzb.cider.logistics.RuleContent;
 import com.lzb.cider.logistics.component.entity.Channel;
 import lombok.EqualsAndHashCode;
 
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -25,6 +26,9 @@ public class ChannelFilter extends Filter {
 
     @Override
     public boolean doFilter(Order order) {
+        if (Objects.isNull(channels)) {
+            return true;
+        }
         return channels.contains(order.getChannel());
     }
 

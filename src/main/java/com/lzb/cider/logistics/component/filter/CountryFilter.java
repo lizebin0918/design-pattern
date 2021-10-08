@@ -5,6 +5,7 @@ import com.lzb.cider.logistics.RuleContent;
 import com.lzb.cider.logistics.component.entity.Country;
 import lombok.EqualsAndHashCode;
 
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -25,6 +26,9 @@ public class CountryFilter extends Filter {
 
     @Override
     public boolean doFilter(Order order) {
+        if (Objects.isNull(countries)) {
+            return true;
+        }
         return countries.contains(order.getCountry());
     }
 

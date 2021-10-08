@@ -1,6 +1,7 @@
 package com.lzb.cider.logistics.component.entity;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 import java.math.BigDecimal;
 
@@ -10,7 +11,8 @@ import java.math.BigDecimal;
  *
  * @author lizebin
  */
-@Data
+@AllArgsConstructor
+@Getter
 public class Range {
 
     private BigDecimal min, max;

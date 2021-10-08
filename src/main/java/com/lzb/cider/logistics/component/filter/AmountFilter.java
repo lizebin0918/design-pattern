@@ -6,6 +6,7 @@ import com.lzb.cider.logistics.component.entity.Range;
 import lombok.EqualsAndHashCode;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 /**
  * 金额过滤<br/>
@@ -25,6 +26,9 @@ public class AmountFilter extends Filter {
 
     @Override
     public boolean doFilter(Order order) {
+        if (Objects.isNull(range)) {
+            return true;
+        }
         BigDecimal amount = order.getAmount();
         return amount.compareTo(range.getMin()) > 0 && amount.compareTo(range.getMax()) < 0;
     }

@@ -3,7 +3,6 @@ package com.lzb.cider.logistics.component.filter;
 import com.lzb.cider.logistics.RuleContent;
 
 import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -21,7 +20,7 @@ public class FilterChainFactory {
     static {
         FILTER_LIST.add(AmountFilter.class);
         FILTER_LIST.add(ChannelFilter.class);
-        FILTER_LIST.add(CountryAndZipCodeRuleFilter.class);
+        FILTER_LIST.add(CountryAndZipCodeFilter.class);
         FILTER_LIST.add(CountryFilter.class);
     }
 
@@ -30,18 +29,23 @@ public class FilterChainFactory {
      * @param ruleContent
      * @return 链表头节点
      */
-    public static Filter createFilterChain(RuleContent ruleContent) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+    public static Filter createFilterChain(RuleContent ruleContent) {
         Filter head = null, current = null;
 
-        // 构建规则所关联的所有Filter
-        for (Class<? extends Filter> filterClass : FILTER_LIST) {
-            Constructor<? extends Filter> constructor = filterClass.getConstructor();
-            Filter filter = constructor.newInstance(ruleContent);
-            if (Objects.isNull(head)) {
-                current = head = filter;
-            } else {
-                current.setNext(filter);
+        try {
+            // 构建规则所关联的所有Filter
+            for (Class<? extends Filter> filterClass : FILTER_LIST) {
+                Constructor<? extends Filter> constructor = filterClass.getConstructor(RuleContent.class);
+                Filter filter = constructor.newInstance(ruleContent);
+                if (Objects.isNull(head)) {
+                    current = head = filter;
+                } else {
+                    current.setNext(filter);
+                }
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("规则生成异常");
         }
         return head;
     }

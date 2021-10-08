@@ -2,10 +2,13 @@ package com.lzb.cider.logistics;
 
 import com.lzb.cider.logistics.component.entity.Channel;
 import com.lzb.cider.logistics.component.entity.Country;
+import com.lzb.cider.logistics.component.entity.Range;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * 订单根据后台配置的物流规则，选出符合规则的物流渠道<br/>
@@ -16,32 +19,14 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        Order order1 = new Order(1, BigDecimal.ZERO, new Country("England"), new Channel("pc"));
+        Order order1 = new Order(1, new BigDecimal("10"), new Country("England"), new Channel("pc"));
         Order order2 = new Order(2, BigDecimal.ZERO, new Country("China"), new Channel("shopify"));
 
-        /*Rule rule = new Rule("只走中国和法国", 1,
-                Arrays.asList(new Channel("中国物流"), new Channel("Cider自建物流")));
-        rule.initFilter(
-                "{\n" +
-                "    \"orderSource\": {\n" +
-                "        \"channel\": [\"shopify\",\"shopify_us\"]\n" +
-                "    },\n" +
-                "    \"logistics\": {\n" +
-                "        \"countryAndZipCode\": [\n" +
-                "            {\n" +
-                "                \"country\": \"China\",\n" +
-                "                \"zipcode\": []\n" +
-                "            },\n" +
-                "            {\n" +
-                "                \"country\": \"The United Kingdom\",\n" +
-                "                \"zipcode\": [\"91710\",\"55%\",\"%66\"]\n" +
-                "            }\n" +
-                "        ]\n" +
-                "    },\n" +
-                "    \"remark\": {\n" +
-                "        \"include\": [\"\"]\n" +
-                "    }\n" +
-                "}");*/
+        RuleContent ruleContent = new RuleContent();
+        ruleContent.setAmountRange(new Range(new BigDecimal(5), new BigDecimal(100)));
+        ruleContent.setChannels(Set.of(new Channel("pc"), new Channel("shopify")));
+        ruleContent.setCountries(Set.of(new Country("China")));
+        Rule rule = new Rule("只走中国和法国", 1, ruleContent, "规则1-匹配");
 
 
         // 数据库查询
@@ -49,17 +34,17 @@ public class Main {
         orderList.add(order1);
         orderList.add(order2);
         List<Rule> ruleList = new ArrayList<>();
-        // ruleList.add(rule);
+        ruleList.add(rule);
 
-        /*for (Order orderItem : orderList) {
-            List<Channel> channelList = new LinkedList<>();
+        for (Order orderItem : orderList) {
+            List<String> channelList = new LinkedList<>();
             for (Rule ruleItem : ruleList) {
-                if (ruleItem.filter(orderItem)) {
-                    channelList.addAll(rule.getChannelList());
+                if (ruleItem.doFilter(orderItem)) {
+                    channelList.add(rule.getResult());
                 }
             }
-            System.out.println("订单-" + orderItem.getOid() + ",匹配物流渠道数:" + channelList.size());
-        }*/
+            System.out.println("订单-" + orderItem.getOid() + ",匹配物流渠道数:" + channelList);
+        }
     }
 
 }

@@ -8,21 +8,21 @@ import lombok.EqualsAndHashCode;
 import java.util.Set;
 
 @EqualsAndHashCode(callSuper = false)
-public class CountryAndZipCodeRuleFilter extends Filter {
+public class CountryAndZipCodeFilter extends Filter {
 
     /**
      * 限定国家和邮编集合
      */
-    private Set<CountryAndZipCode> countryAndZipCodes;
+    private Set<CountryAndZipCode> countryAndZipCode;
 
-    public CountryAndZipCodeRuleFilter(RuleContent ruleContent) {
+    public CountryAndZipCodeFilter(RuleContent ruleContent) {
         super(ruleContent);
-        countryAndZipCodes = ruleContent.getCountryAndZipCodes();
+        countryAndZipCode = ruleContent.getCountryAndZipCode();
     }
 
     @Override
     public boolean doFilter(Order order) {
-        return false;
+        return true;
     }
 
 }

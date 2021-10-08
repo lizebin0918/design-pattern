@@ -14,6 +14,9 @@ public abstract class Filter {
     protected Filter next = null;
     protected RuleContent ruleContent;
 
+    /**
+     * @param ruleContent 规则明细
+     */
     public Filter(RuleContent ruleContent) {
         this.ruleContent = ruleContent;
     }
@@ -32,7 +35,7 @@ public abstract class Filter {
 
     /**
      * 过滤逻辑
-     * @return
+     * @return 是否满足过滤条件
      */
     public abstract boolean doFilter(Order order);
 
