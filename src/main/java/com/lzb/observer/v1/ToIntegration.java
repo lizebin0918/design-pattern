@@ -1,7 +1,5 @@
 package com.lzb.observer.v1;
 
-import com.lzb.observer.Member;
-
 /**
  * 送积分<br/>
  * Created on : 2021-06-18 10:42

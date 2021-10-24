@@ -1,4 +1,4 @@
-package com.lzb.observer;
+package com.lzb.observer.v1;
 
 import java.util.Objects;
 

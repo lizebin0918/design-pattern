@@ -1,6 +1,4 @@
-package com.lzb.observer;
-
-import com.lzb.observer.v1.*;
+package com.lzb.observer.v1;
 
 import java.util.*;
 
