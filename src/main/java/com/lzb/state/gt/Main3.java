@@ -1,4 +1,4 @@
-package com.lzb.state;
+package com.lzb.state.gt;
 
 /**
  * 状态模式<br/>

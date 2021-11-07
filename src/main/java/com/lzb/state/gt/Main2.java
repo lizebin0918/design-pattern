@@ -1,7 +1,7 @@
-package com.lzb.state;
+package com.lzb.state.gt;
 
 
-import static com.lzb.state.Main2.State.*;
+import static com.lzb.state.gt.Main2.State.*;
 
 /**
  * 查找表<br/>
