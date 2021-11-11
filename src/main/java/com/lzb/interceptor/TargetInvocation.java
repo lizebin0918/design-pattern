@@ -1,5 +1,7 @@
 package com.lzb.interceptor;
 
+import com.alibaba.fastjson.JSON;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -23,8 +25,10 @@ public class TargetInvocation {
     public Response invoke() {
         if (iterator.hasNext()) {
             Interceptor interceptor = iterator.next();
+            System.out.println("【开始】当前遍历拦截器：" + JSON.toJSONString(interceptor));
             // 递归调用 invoke()
             interceptor.intercept(this);
+            System.out.println("【结束】当前遍历拦截器：" + JSON.toJSONString(interceptor));
         }
         return target.execute(request);
     }
