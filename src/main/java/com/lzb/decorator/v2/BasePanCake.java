@@ -10,7 +10,7 @@ public class BasePanCake extends PanCake {
      * @return
      */
     protected String getMsg() {
-        return "煎饼";
+        return "煎饼(5块)";
     }
 
     /**
