@@ -12,11 +12,12 @@ public class EggDecorator extends PanCakeDecorator {
 
     @Override
     protected String getMsg() {
-        return super.getMsg() + "+1个鸡蛋(2块)";
+        System.out.println("鸡蛋");
+        return panCake.getMsg() + "+1个鸡蛋(2块)";
     }
 
     @Override
     protected int getPrice() {
-        return super.getPrice() + 2;
+        return panCake.getPrice() + 2;
     }
 }

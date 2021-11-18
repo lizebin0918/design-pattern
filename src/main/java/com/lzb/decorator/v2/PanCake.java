@@ -1,7 +1,7 @@
 package com.lzb.decorator.v2;
 
 /**
- * <br/>
+ * 通过对象的嵌套，实现递归<br/>
  * Created on : 2021-05-15 20:24
  * @author lizebin
  */

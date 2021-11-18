@@ -12,14 +12,12 @@ public class SausageDecorator extends PanCakeDecorator {
 
     @Override
     protected String getMsg() {
-        System.out.println(super.getClass());
-        System.out.println(this.getClass());
-        System.out.println(super.getClass() == this.getClass());
-        return super.getMsg() + "+1根香肠(4块)";
+        System.out.println("香肠");
+        return panCake.getMsg() + "+1根香肠(4块)";
     }
 
     @Override
     protected int getPrice() {
-        return super.getPrice() + 4;
+        return panCake.getPrice() + 4;
     }
 }

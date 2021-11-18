@@ -10,10 +10,13 @@ import lombok.Data;
 public class Test {
 
     public static void main(String[] args) {
+
+        // 通过对象的嵌套，实现递归....
         PanCake panCake = new BasePanCake();
         panCake = new EggDecorator(panCake);
         panCake = new EggDecorator(panCake);
         panCake = new SausageDecorator(panCake);
+
         System.out.println(panCake.getMsg());
         System.out.println("总价:" + panCake.getPrice());
 
