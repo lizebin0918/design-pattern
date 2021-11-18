@@ -1,6 +1,7 @@
 package com.lzb.state.activity.repository;
 
-import com.lzb.state.activity.ActivityStatus;
+import com.lzb.state.activity.Activity;
+import com.lzb.state.activity.ActivityState;
 
 /**
  * <br/>
@@ -18,9 +19,15 @@ public class ActivityRepository {
      * @param targetStatus    目标状态
      * @return              更新结果
      */
-    public boolean alterStatus(Long activityId, ActivityStatus sourceStatus, ActivityStatus targetStatus) {
+    public boolean alterStatus(Long activityId, ActivityState sourceStatus, ActivityState targetStatus) {
         System.out.println("活动：" + activityId + " 更新状态：" + "源状态（" + sourceStatus.getText() + "）->" + "目标状态（" + targetStatus.getText() + "）");
         return true;
     }
 
+    public boolean alterStatus(Activity activity) {
+        System.out.println("活动：" + activity.getId()
+                + " 更新状态：" + "源状态（" + activity.getOldVersion().getState().getText()
+                + "）->" + "目标状态（" + activity.getState().getText() + "）");
+        return true;
+    }
 }

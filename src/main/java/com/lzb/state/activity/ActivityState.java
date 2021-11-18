@@ -6,7 +6,7 @@ package com.lzb.state.activity;
  *
  * @author lizebin
  */
-public enum ActivityStatus {
+public enum ActivityState {
 
     /**
      * 1：编辑
@@ -44,7 +44,7 @@ public enum ActivityStatus {
     private int code;
     private String text;
 
-    ActivityStatus(Integer code, String text) {
+    ActivityState(Integer code, String text) {
         this.code = code;
         this.text = text;
     }

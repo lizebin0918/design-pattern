@@ -6,15 +6,15 @@ package com.lzb.state.activity;
  *
  * @author lizebin
  */
-public interface IStateHandler {
+public interface IStateMachine {
 
     /**
      * 提审
-     * @param activityId    活动ID
+     * @param activity    活动聚合根
      * @param currentStatus 当前状态
      * @return              审核结果
      */
-    Result arraignment(Long activityId, ActivityStatus currentStatus);
+    void arraignment(Activity activity);
 
     /**
      * 审核通过
@@ -22,7 +22,7 @@ public interface IStateHandler {
      * @param currentStatus 当前状态
      * @return              审核结果
      */
-    Result checkPass(Long activityId, ActivityStatus currentStatus);
+    Result checkPass(Long activityId, ActivityState currentStatus);
 
     /**
      * 审核拒绝
@@ -30,7 +30,7 @@ public interface IStateHandler {
      * @param currentStatus 当前状态
      * @return              审核结果
      */
-    Result checkRefuse(Long activityId, ActivityStatus currentStatus);
+    Result checkRefuse(Long activityId, ActivityState currentStatus);
 
     /**
      * 撤销审核
@@ -38,7 +38,7 @@ public interface IStateHandler {
      * @param currentStatus 当前状态
      * @return              审核结果
      */
-    Result checkRevoke(Long activityId, ActivityStatus currentStatus);
+    Result checkRevoke(Long activityId, ActivityState currentStatus);
 
     /**
      * 关闭
@@ -46,7 +46,7 @@ public interface IStateHandler {
      * @param currentStatus 当前状态
      * @return              审核结果
      */
-    Result close(Long activityId, ActivityStatus currentStatus);
+    Result close(Long activityId, ActivityState currentStatus);
 
     /**
      * 开启
@@ -54,7 +54,7 @@ public interface IStateHandler {
      * @param currentStatus 当前状态
      * @return              审核结果
      */
-    Result open(Long activityId, ActivityStatus currentStatus);
+    Result open(Long activityId, ActivityState currentStatus);
 
     /**
      * 运行活动中
@@ -62,6 +62,6 @@ public interface IStateHandler {
      * @param currentStatus 当前状态
      * @return              审核结果
      */
-    Result doing(Long activityId, ActivityStatus currentStatus);
+    Result doing(Long activityId, ActivityState currentStatus);
 
 }

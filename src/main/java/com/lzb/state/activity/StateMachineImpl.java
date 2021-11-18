@@ -6,41 +6,40 @@ package com.lzb.state.activity;
  *
  * @author lizebin
  */
-public class StateHandlerImpl extends StateConfig implements IStateHandler {
-
+public class StateMachineImpl extends StateConfig implements IStateMachine {
 
     @Override
-    public Result arraignment(Long activityId, ActivityStatus currentStatus) {
-        return stateGroup.get(currentStatus).arraignment(activityId, currentStatus);
+    public void arraignment(Activity activity) {
+        stateGroup.get(activity.getState()).arraignment(activity);
     }
 
     @Override
-    public Result checkPass(Long activityId, ActivityStatus currentStatus) {
+    public Result checkPass(Long activityId, ActivityState currentStatus) {
         return stateGroup.get(currentStatus).checkPass(activityId, currentStatus);
     }
 
     @Override
-    public Result checkRefuse(Long activityId, ActivityStatus currentStatus) {
+    public Result checkRefuse(Long activityId, ActivityState currentStatus) {
         return stateGroup.get(currentStatus).checkRefuse(activityId, currentStatus);
     }
 
     @Override
-    public Result checkRevoke(Long activityId, ActivityStatus currentStatus) {
+    public Result checkRevoke(Long activityId, ActivityState currentStatus) {
         return stateGroup.get(currentStatus).checkRevoke(activityId, currentStatus);
     }
 
     @Override
-    public Result close(Long activityId, ActivityStatus currentStatus) {
+    public Result close(Long activityId, ActivityState currentStatus) {
         return stateGroup.get(currentStatus).checkRevoke(activityId, currentStatus);
     }
 
     @Override
-    public Result open(Long activityId, ActivityStatus currentStatus) {
+    public Result open(Long activityId, ActivityState currentStatus) {
         return stateGroup.get(currentStatus).open(activityId, currentStatus);
     }
 
     @Override
-    public Result doing(Long activityId, ActivityStatus currentStatus) {
+    public Result doing(Long activityId, ActivityState currentStatus) {
         return stateGroup.get(currentStatus).doing(activityId, currentStatus);
     }
 }

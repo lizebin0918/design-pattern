@@ -15,16 +15,16 @@ public class StateConfig {
     private PassState passState = new PassState();
     private RefuseState refuseState = new RefuseState();
 
-    protected Map<ActivityStatus, AbstractState> stateGroup = new ConcurrentHashMap<>();
+    protected Map<ActivityState, AbstractState> stateGroup = new ConcurrentHashMap<>();
 
     public StateConfig() {
-        stateGroup.put(ActivityStatus.ARRAIGNMENT, arraignmentState);
-        stateGroup.put(ActivityStatus.CLOSE, closeState);
-        stateGroup.put(ActivityStatus.DOING, doingState);
-        stateGroup.put(ActivityStatus.EDIT, editingState);
-        stateGroup.put(ActivityStatus.OPEN, openState);
-        stateGroup.put(ActivityStatus.PASS, passState);
-        stateGroup.put(ActivityStatus.REFUSE, refuseState);
+        stateGroup.put(ActivityState.ARRAIGNMENT, arraignmentState);
+        stateGroup.put(ActivityState.CLOSE, closeState);
+        stateGroup.put(ActivityState.DOING, doingState);
+        stateGroup.put(ActivityState.EDIT, editingState);
+        stateGroup.put(ActivityState.OPEN, openState);
+        stateGroup.put(ActivityState.PASS, passState);
+        stateGroup.put(ActivityState.REFUSE, refuseState);
     }
 
 }
