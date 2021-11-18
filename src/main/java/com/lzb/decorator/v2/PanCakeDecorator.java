@@ -6,15 +6,19 @@ package com.lzb.decorator.v2;
  */
 public abstract class PanCakeDecorator extends PanCake {
 
-    protected PanCake panCake;
+    private final PanCake panCake;
 
     public PanCakeDecorator(PanCake panCake) {
         this.panCake = panCake;
     }
 
     @Override
-    protected abstract String getMsg();
+    public String getMsg() {
+        return panCake.getMsg();
+    }
 
     @Override
-    protected abstract int getPrice();
+    public int getPrice() {
+        return panCake.getPrice();
+    }
 }

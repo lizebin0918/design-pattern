@@ -11,13 +11,14 @@ public class EggDecorator extends PanCakeDecorator {
     }
 
     @Override
-    protected String getMsg() {
+    public String getMsg() {
         System.out.println("鸡蛋");
-        return panCake.getMsg() + "+1个鸡蛋(2块)";
+        // super调用的是父类getMsg()，但是通过多态绑定，实际调用的是当前的getMsg()方法
+        return super.getMsg() + "+1个鸡蛋(2块)";
     }
 
     @Override
-    protected int getPrice() {
-        return panCake.getPrice() + 2;
+    public int getPrice() {
+        return super.getPrice() + 2;
     }
 }

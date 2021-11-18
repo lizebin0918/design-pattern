@@ -11,13 +11,14 @@ public class SausageDecorator extends PanCakeDecorator {
     }
 
     @Override
-    protected String getMsg() {
+    public String getMsg() {
         System.out.println("香肠");
-        return panCake.getMsg() + "+1根香肠(4块)";
+        // super调用的是父类的getMsg()，但是通过多态绑定，实际调用的是包装类的getMsg()方法
+        return super.getMsg() + "+1根香肠(4块)";
     }
 
     @Override
-    protected int getPrice() {
-        return panCake.getPrice() + 4;
+    public int getPrice() {
+        return super.getPrice() + 4;
     }
 }
