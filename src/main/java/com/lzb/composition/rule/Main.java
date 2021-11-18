@@ -82,6 +82,7 @@ public class Main {
         TreeNodeLink treeNodeLink_111 = new TreeNodeLink();
         treeNodeLink_111.setNodeIdFrom(11L);
         treeNodeLink_111.setNodeIdTo(111L);
+        // 链接：12->122
         treeNodeLink_111.setRuleLimitType(3);
         treeNodeLink_111.setRuleLimitValue("25");
 
@@ -89,6 +90,7 @@ public class Main {
         TreeNodeLink treeNodeLink_112 = new TreeNodeLink();
         treeNodeLink_112.setNodeIdFrom(11L);
         treeNodeLink_112.setNodeIdTo(112L);
+        // 大于等于25岁
         treeNodeLink_112.setRuleLimitType(4);
         treeNodeLink_112.setRuleLimitValue("25");
 
@@ -111,6 +113,7 @@ public class Main {
         TreeNodeLink treeNodeLink_121 = new TreeNodeLink();
         treeNodeLink_121.setNodeIdFrom(12L);
         treeNodeLink_121.setNodeIdTo(121L);
+        // 小于25岁
         treeNodeLink_121.setRuleLimitType(3);
         treeNodeLink_121.setRuleLimitValue("25");
 
@@ -118,6 +121,7 @@ public class Main {
         TreeNodeLink treeNodeLink_122 = new TreeNodeLink();
         treeNodeLink_122.setNodeIdFrom(12L);
         treeNodeLink_122.setNodeIdTo(122L);
+        // 大于等于25岁
         treeNodeLink_122.setRuleLimitType(4);
         treeNodeLink_122.setRuleLimitValue("25");
 
@@ -132,28 +136,28 @@ public class Main {
         treeNode_111.setTreeId(10001L);
         treeNode_111.setTreeNodeId(111L);
         treeNode_111.setNodeType(2);
-        treeNode_111.setNodeValue("果实A");
+        treeNode_111.setNodeValue("运营活动A");
 
         // 节点：112
         TreeNode treeNode_112 = new TreeNode();
         treeNode_112.setTreeId(10001L);
         treeNode_112.setTreeNodeId(112L);
         treeNode_112.setNodeType(2);
-        treeNode_112.setNodeValue("果实B");
+        treeNode_112.setNodeValue("运营活动B");
 
         // 节点：121
         TreeNode treeNode_121 = new TreeNode();
         treeNode_121.setTreeId(10001L);
         treeNode_121.setTreeNodeId(121L);
         treeNode_121.setNodeType(2);
-        treeNode_121.setNodeValue("果实C");
+        treeNode_121.setNodeValue("运营活动C");
 
         // 节点：122
         TreeNode treeNode_122 = new TreeNode();
         treeNode_122.setTreeId(10001L);
         treeNode_122.setTreeNodeId(122L);
         treeNode_122.setNodeType(2);
-        treeNode_122.setNodeValue("果实D");
+        treeNode_122.setNodeValue("运营活动D");
 
         // 树根
         TreeRoot treeRoot = new TreeRoot();

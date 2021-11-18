@@ -23,9 +23,14 @@ public abstract class EngineBase extends EngineConfig implements IEngine {
             LogicFilter logicFilter = logicFilterMap.get(ruleKey);
             String matterValue = logicFilter.matterValue(treeId, user);
             Long nextNode = logicFilter.filter(matterValue, treeNodeInfo.getTreeNodeLinkList());
+            if (nextNode == 0) {
+                System.out.println("无匹配规则，应该走兜底规则");
+                break;
+            }
             treeNodeInfo = treeNodeMap.get(nextNode);
             System.out.printf("决策树引擎=>%s userId：%s treeId：%s treeNode：%s ruleKey：%s matterValue：%s", treeRoot.getTreeName(),
                     user.getId(), treeId, treeNodeInfo.getTreeNodeId(), ruleKey, matterValue);
+            System.out.println("");
         }
         return treeNodeInfo;
     }
