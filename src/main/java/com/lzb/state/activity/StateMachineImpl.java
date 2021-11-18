@@ -14,32 +14,8 @@ public class StateMachineImpl extends StateConfig implements IStateMachine {
     }
 
     @Override
-    public Result checkPass(Long activityId, ActivityState currentStatus) {
-        return stateGroup.get(currentStatus).checkPass(activityId, currentStatus);
+    public void checkPass(Activity activity) {
+        stateGroup.get(activity.getState()).checkPass(activity);
     }
 
-    @Override
-    public Result checkRefuse(Long activityId, ActivityState currentStatus) {
-        return stateGroup.get(currentStatus).checkRefuse(activityId, currentStatus);
-    }
-
-    @Override
-    public Result checkRevoke(Long activityId, ActivityState currentStatus) {
-        return stateGroup.get(currentStatus).checkRevoke(activityId, currentStatus);
-    }
-
-    @Override
-    public Result close(Long activityId, ActivityState currentStatus) {
-        return stateGroup.get(currentStatus).checkRevoke(activityId, currentStatus);
-    }
-
-    @Override
-    public Result open(Long activityId, ActivityState currentStatus) {
-        return stateGroup.get(currentStatus).open(activityId, currentStatus);
-    }
-
-    @Override
-    public Result doing(Long activityId, ActivityState currentStatus) {
-        return stateGroup.get(currentStatus).doing(activityId, currentStatus);
-    }
 }
