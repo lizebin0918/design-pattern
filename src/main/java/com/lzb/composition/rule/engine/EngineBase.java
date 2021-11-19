@@ -3,17 +3,20 @@ package com.lzb.composition.rule.engine;
 
 import com.lzb.composition.rule.logic.LogicFilter;
 import com.lzb.composition.rule.model.*;
+import com.lzb.composition.rule.model.tree.Tree;
+import com.lzb.composition.rule.model.tree.TreeNode;
+import com.lzb.composition.rule.model.tree.TreeRoot;
 
 import java.util.Map;
 
 public abstract class EngineBase extends EngineConfig implements IEngine {
 
     @Override
-    public abstract EngineResult process(final Long treeId, TreeRich treeRich, final User user);
+    public abstract EngineResult process(final Long treeId, Tree tree, final User user);
 
-    protected TreeNode engineDecisionMaker(TreeRich treeRich, Long treeId, User user) {
-        TreeRoot treeRoot = treeRich.getTreeRoot();
-        Map<Long, TreeNode> treeNodeMap = treeRich.getTreeNodeMap();
+    protected TreeNode engineDecisionMaker(Tree tree, Long treeId, User user) {
+        TreeRoot treeRoot = tree.getTreeRoot();
+        Map<Long, TreeNode> treeNodeMap = tree.getTreeNodeMap();
         // 规则树根ID
         Long rootNodeId = treeRoot.getTreeRootNodeId();
         TreeNode treeNodeInfo = treeNodeMap.get(rootNodeId);

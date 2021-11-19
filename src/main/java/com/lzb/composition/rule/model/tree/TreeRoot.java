@@ -1,10 +1,18 @@
-package com.lzb.composition.rule.model;
+package com.lzb.composition.rule.model.tree;
 
+/**
+ * 树根
+ */
 public class TreeRoot {
 
-    private Long treeId;         //规则树ID
-    private Long treeRootNodeId; //规则树根ID
-    private String treeName;     //规则树名称
+    // 规则树ID
+    private Long treeId;
+
+    // 规则树根ID
+    private Long treeRootNodeId;
+
+    // 规则树名称
+    private String treeName;
 
     public Long getTreeId() {
         return treeId;

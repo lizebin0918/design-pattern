@@ -1,7 +1,7 @@
 package com.lzb.composition.rule.logic;
 
 
-import com.lzb.composition.rule.model.TreeNodeLink;
+import com.lzb.composition.rule.model.tree.TreeNodeLink;
 import com.lzb.composition.rule.model.User;
 
 import java.util.List;

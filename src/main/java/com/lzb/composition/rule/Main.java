@@ -4,6 +4,10 @@ import com.alibaba.fastjson.JSON;
 import com.lzb.composition.rule.engine.IEngine;
 import com.lzb.composition.rule.engine.impl.TreeEngineHandle;
 import com.lzb.composition.rule.model.*;
+import com.lzb.composition.rule.model.tree.Tree;
+import com.lzb.composition.rule.model.tree.TreeNode;
+import com.lzb.composition.rule.model.tree.TreeNodeLink;
+import com.lzb.composition.rule.model.tree.TreeRoot;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,22 +22,22 @@ import java.util.Map;
  */
 public class Main {
 
-    private static TreeRich treeRich;
+    private static Tree tree;
 
     public static void main(String[] args) {
 
         init();
 
-        System.out.println("决策树组合结构信息：\r\n" + JSON.toJSONString(treeRich));
+        System.out.println("决策树组合结构信息：\r\n" + JSON.toJSONString(tree));
 
         IEngine treeEngineHandle = new TreeEngineHandle();
 
         User user = new User();
         user.setId("1234567");
         user.setGender("man");
-        user.setAge(29);
+        user.setAge(32);
 
-        EngineResult result = treeEngineHandle.process(10001L, treeRich, user);
+        EngineResult result = treeEngineHandle.process(10001L, tree, user);
         System.out.printf("测试结果 ：%s", JSON.toJSONString(result));
 
     }
@@ -78,25 +82,43 @@ public class Main {
         treeNode_11.setRuleKey("userAge");
         treeNode_11.setRuleDesc("用户年龄");
 
+        // 年龄小于25岁
         // 链接：11->111
         TreeNodeLink treeNodeLink_111 = new TreeNodeLink();
         treeNodeLink_111.setNodeIdFrom(11L);
         treeNodeLink_111.setNodeIdTo(111L);
-        // 链接：12->122
         treeNodeLink_111.setRuleLimitType(3);
         treeNodeLink_111.setRuleLimitValue("25");
 
+        // 年龄大于25岁
         // 链接：11->112
         TreeNodeLink treeNodeLink_112 = new TreeNodeLink();
         treeNodeLink_112.setNodeIdFrom(11L);
         treeNodeLink_112.setNodeIdTo(112L);
-        // 大于等于25岁
-        treeNodeLink_112.setRuleLimitType(4);
-        treeNodeLink_112.setRuleLimitValue("25");
+        treeNodeLink_112.setRuleLimitType(3);
+        treeNodeLink_112.setRuleLimitValue("30");
+
+        // 年龄大于30岁
+        // 链接：11->113
+        TreeNodeLink treeNodeLink_113 = new TreeNodeLink();
+        treeNodeLink_113.setNodeIdFrom(11L);
+        treeNodeLink_113.setNodeIdTo(113L);
+        treeNodeLink_113.setRuleLimitType(3);
+        treeNodeLink_113.setRuleLimitValue("35");
+
+        // 年龄大于35岁
+        // 链接：11->114
+        TreeNodeLink treeNodeLink_114 = new TreeNodeLink();
+        treeNodeLink_114.setNodeIdFrom(11L);
+        treeNodeLink_114.setNodeIdTo(114L);
+        treeNodeLink_114.setRuleLimitType(3);
+        treeNodeLink_114.setRuleLimitValue("40");
 
         List<TreeNodeLink> treeNodeLinkList_11 = new ArrayList<>();
         treeNodeLinkList_11.add(treeNodeLink_111);
         treeNodeLinkList_11.add(treeNodeLink_112);
+        treeNodeLinkList_11.add(treeNodeLink_113);
+        treeNodeLinkList_11.add(treeNodeLink_114);
 
         treeNode_11.setTreeNodeLinkList(treeNodeLinkList_11);
 
@@ -121,13 +143,31 @@ public class Main {
         TreeNodeLink treeNodeLink_122 = new TreeNodeLink();
         treeNodeLink_122.setNodeIdFrom(12L);
         treeNodeLink_122.setNodeIdTo(122L);
-        // 大于等于25岁
-        treeNodeLink_122.setRuleLimitType(4);
-        treeNodeLink_122.setRuleLimitValue("25");
+        // 小于30岁
+        treeNodeLink_122.setRuleLimitType(3);
+        treeNodeLink_122.setRuleLimitValue("30");
+
+        // 年龄小于35岁
+        // 链接：12->123
+        TreeNodeLink treeNodeLink_123 = new TreeNodeLink();
+        treeNodeLink_123.setNodeIdFrom(12L);
+        treeNodeLink_123.setNodeIdTo(123L);
+        treeNodeLink_123.setRuleLimitType(3);
+        treeNodeLink_123.setRuleLimitValue("35");
+
+        // 年龄小于40岁
+        // 链接：12->124
+        TreeNodeLink treeNodeLink_124 = new TreeNodeLink();
+        treeNodeLink_124.setNodeIdFrom(12L);
+        treeNodeLink_124.setNodeIdTo(124L);
+        treeNodeLink_124.setRuleLimitType(4);
+        treeNodeLink_124.setRuleLimitValue("40");
 
         List<TreeNodeLink> treeNodeLinkList_12 = new ArrayList<>();
         treeNodeLinkList_12.add(treeNodeLink_121);
         treeNodeLinkList_12.add(treeNodeLink_122);
+        treeNodeLinkList_12.add(treeNodeLink_123);
+        treeNodeLinkList_12.add(treeNodeLink_124);
 
         treeNode_12.setTreeNodeLinkList(treeNodeLinkList_12);
 
@@ -145,19 +185,51 @@ public class Main {
         treeNode_112.setNodeType(2);
         treeNode_112.setNodeValue("运营活动B");
 
+        /*
+        节点:113
+         */
+        TreeNode treeNode_113 = new TreeNode();
+        treeNode_113.setTreeId(10001L);
+        treeNode_113.setTreeNodeId(113L);
+        treeNode_113.setNodeType(2);
+        treeNode_113.setNodeValue("运营活动C");
+
+        /*
+        节点:114
+         */
+        TreeNode treeNode_114 = new TreeNode();
+        treeNode_114.setTreeId(10001L);
+        treeNode_114.setTreeNodeId(114L);
+        treeNode_114.setNodeType(2);
+        treeNode_114.setNodeValue("运营活动D");
+
         // 节点：121
         TreeNode treeNode_121 = new TreeNode();
         treeNode_121.setTreeId(10001L);
         treeNode_121.setTreeNodeId(121L);
         treeNode_121.setNodeType(2);
-        treeNode_121.setNodeValue("运营活动C");
+        treeNode_121.setNodeValue("运营活动E");
 
         // 节点：122
         TreeNode treeNode_122 = new TreeNode();
         treeNode_122.setTreeId(10001L);
         treeNode_122.setTreeNodeId(122L);
         treeNode_122.setNodeType(2);
-        treeNode_122.setNodeValue("运营活动D");
+        treeNode_122.setNodeValue("运营活动F");
+
+        // 节点：121
+        TreeNode treeNode_123 = new TreeNode();
+        treeNode_123.setTreeId(10001L);
+        treeNode_123.setTreeNodeId(123L);
+        treeNode_123.setNodeType(2);
+        treeNode_123.setNodeValue("运营活动G");
+
+        // 节点：122
+        TreeNode treeNode_124 = new TreeNode();
+        treeNode_124.setTreeId(10001L);
+        treeNode_124.setTreeNodeId(124L);
+        treeNode_124.setNodeType(2);
+        treeNode_124.setNodeValue("运营活动H");
 
         // 树根
         TreeRoot treeRoot = new TreeRoot();
@@ -171,10 +243,14 @@ public class Main {
         treeNodeMap.put(12L, treeNode_12);
         treeNodeMap.put(111L, treeNode_111);
         treeNodeMap.put(112L, treeNode_112);
+        treeNodeMap.put(113L, treeNode_113);
+        treeNodeMap.put(114L, treeNode_114);
         treeNodeMap.put(121L, treeNode_121);
         treeNodeMap.put(122L, treeNode_122);
+        treeNodeMap.put(123L, treeNode_123);
+        treeNodeMap.put(124L, treeNode_124);
 
-        treeRich = new TreeRich(treeRoot, treeNodeMap);
+        tree = new Tree(treeRoot, treeNodeMap);
 
     }
 }

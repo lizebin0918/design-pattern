@@ -1,11 +1,20 @@
-package com.lzb.composition.rule.model;
+package com.lzb.composition.rule.model.tree;
 
+/**
+ * 节点之间的"链"，用来判断走左边还是右边，如果多叉树呢？
+ */
 public class TreeNodeLink {
 
-    private Long nodeIdFrom;        //节点From
-    private Long nodeIdTo;          //节点To
-    private Integer ruleLimitType;  //限定类型；1:=;2:>;3:<;4:>=;5<=;6:enum[枚举范围]
-    private String ruleLimitValue;  //限定值
+    // 节点From
+    private Long nodeIdFrom;
+    // 节点To
+    private Long nodeIdTo;
+    /**
+     * 限定类型；1:=;2:>;3:<;4:>=;5<=;6:enum[枚举范围]
+     */
+    private Integer ruleLimitType;
+    // 限定值
+    private String ruleLimitValue;
 
     public Long getNodeIdFrom() {
         return nodeIdFrom;

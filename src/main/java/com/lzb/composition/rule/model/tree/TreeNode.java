@@ -1,7 +1,10 @@
-package com.lzb.composition.rule.model;
+package com.lzb.composition.rule.model.tree;
 
 import java.util.List;
 
+/**
+ * 树节点
+ */
 public class TreeNode {
 
     private Long treeId;            //规则树ID
