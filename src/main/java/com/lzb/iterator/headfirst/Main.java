@@ -1,4 +1,4 @@
-package com.lzb.iterator.hf;
+package com.lzb.iterator.headfirst;
 
 public class Main {
 
@@ -11,7 +11,13 @@ public class Main {
 		allMenus.add(m);
 		allMenus.add(kfc);
 		allMenus.add(starBucks);
-		
+
+		MenuComponent hamburgerMenu = new Menu("汉堡", "各种汉堡");
+		m.add(hamburgerMenu);
+		hamburgerMenu.add(new MenuItem("照烧鸡腿堡", "照烧鸡腿堡", false, 10D));
+		hamburgerMenu.add(new MenuItem("炸鸡腿堡", "炸烧鸡腿堡", false, 10D));
+
+
 		m.add(new MenuItem("炸鸡", "香辣鸡腿", false, 3.83D));
 		m.add(new MenuItem("雪糕", "圆筒雪糕", false, 4D));
 		kfc.add(new MenuItem("全家桶", "鸡翅集合", false, 110D));
