@@ -40,17 +40,17 @@ public class Department {
      * @return
      */
     public Iterator<Department> iterator() {
-        return new InOrderIterator(this);
+        return new PreOrderIterator(this);
     }
 
     /**
-     * 中序遍历
+     * 前序遍历
      * @param department
      * @param list 存放遍历结果
      */
-    public void inOrder(Department department, List<Department> departmentList) {
+    public void preOrder(Department department, List<Department> departmentList) {
         departmentList.add(department);
-        department.getDepartmentList().forEach(child -> inOrder(child, departmentList));
+        department.getDepartmentList().forEach(child -> preOrder(child, departmentList));
     }
 
 }
