@@ -1,10 +1,10 @@
-package com.lzb.memento.v2;
+package com.lzb.memento.gt.v1;
 
 import java.util.Scanner;
 
 /**
- * 更加体现封装性<br/>
- * Created on : 2021-10-13 22:12
+ * 备忘录模式<br/>
+ * Created on : 2021-10-13 12:41
  *
  * @author lizebin
  */
@@ -18,12 +18,11 @@ public class Main {
         while (scanner.hasNext()) {
             String input = scanner.next();
             if (":list".equals(input)) {
-                System.out.println(inputText.getText());
+                System.out.println(inputText.toString());
             } else if (":undo".equals(input)) {
-                Snapshot snapshot = snapshotHolder.popSnapshot();
-                inputText.restoreSnapshot(snapshot);
+                inputText.setText(snapshotHolder.popSnapshot().getText());
             } else {
-                snapshotHolder.pushSnapshot(inputText.createSnapshot());
+                snapshotHolder.pushSnapshot(inputText);
                 inputText.append(input);
             }
         }

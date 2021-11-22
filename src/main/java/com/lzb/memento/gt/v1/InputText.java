@@ -1,4 +1,4 @@
-package com.lzb.memento.v1;
+package com.lzb.memento.gt.v1;
 
 /**
  * 备忘录模式<br/>
