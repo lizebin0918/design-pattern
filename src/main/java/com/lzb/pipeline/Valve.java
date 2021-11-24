@@ -12,6 +12,6 @@ public interface Valve {
 
     void setNext(Valve valve);
 
-    void invoke(String s);
+    String invoke(String s);
 
 }

@@ -61,4 +61,12 @@ public class StandarPipeline implements Pipeline {
     public void setTail(Valve tail) {
         this.tail = tail;
     }
+
+    public void invoke(String s) {
+        Valve current = head;
+        while (Objects.nonNull(current)) {
+            s = current.invoke(s);
+            current = current.next();
+        }
+    }
 }
