@@ -1,4 +1,4 @@
-package com.lzb.vistor.v1;
+package com.lzb.vistor.gt.v1;
 
 /**
  * <br/>

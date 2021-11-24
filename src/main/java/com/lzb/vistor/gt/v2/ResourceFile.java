@@ -1,7 +1,7 @@
-package com.lzb.vistor.v2;
+package com.lzb.vistor.gt.v2;
 
-import com.lzb.vistor.v2.extractor.Compressor;
-import com.lzb.vistor.v2.extractor.Extractor;
+import com.lzb.vistor.gt.v2.extractor.Compressor;
+import com.lzb.vistor.gt.v2.extractor.Extractor;
 
 /**
  * <br/>

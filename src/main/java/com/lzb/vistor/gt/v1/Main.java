@@ -1,6 +1,4 @@
-package com.lzb.vistor.v2;
-
-import com.lzb.vistor.v2.extractor.Extractor;
+package com.lzb.vistor.gt.v1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,9 +18,8 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        Extractor extractor = new Extractor();
         for (ResourceFile resourceFile : listAllResourceFiles("")) {
-            resourceFile.accept(extractor);
+            resourceFile.extract2txt();
         }
     }
 

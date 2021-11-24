@@ -1,8 +1,8 @@
-package com.lzb.vistor.v2.extractor;
+package com.lzb.vistor.gt.v2.extractor;
 
-import com.lzb.vistor.v2.PPTFile;
-import com.lzb.vistor.v2.PdfFile;
-import com.lzb.vistor.v2.WordFile;
+import com.lzb.vistor.gt.v2.PPTFile;
+import com.lzb.vistor.gt.v2.PdfFile;
+import com.lzb.vistor.gt.v2.WordFile;
 
 /**
  * 提取接口<br/>
