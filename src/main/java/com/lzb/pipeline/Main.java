@@ -20,7 +20,7 @@ public class Main {
         pipeline.addValve(firstValve);
         pipeline.addValve(secondValve);
 
-        pipeline.getHead().invoke(s);
+        pipeline.invoke(s);
     }
 
 }

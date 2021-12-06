@@ -9,9 +9,9 @@ package com.lzb.pipeline;
 public class FirstValve extends BaseValve {
 
     @Override
-    public void invoke(String s) {
+    public String invoke(String s) {
         s = s.replace("11", "first");
         System.out.println("11 替换成 first:" + s);
-        next().invoke(s);
+        return s;
     }
 }

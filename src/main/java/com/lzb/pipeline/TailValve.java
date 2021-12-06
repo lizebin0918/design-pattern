@@ -9,9 +9,10 @@ package com.lzb.pipeline;
 public class TailValve extends BaseValve {
 
     @Override
-    public void invoke(String s) {
+    public String invoke(String s) {
         s = s.replace("33", "third");
         System.out.println("33 被替换成 third:" + s);
+        return s;
     }
 
 }

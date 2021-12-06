@@ -21,5 +21,5 @@ public abstract class BaseValve implements Valve {
         this.next = valve;
     }
 
-    public abstract void invoke(String s);
+    public abstract String invoke(String s);
 }

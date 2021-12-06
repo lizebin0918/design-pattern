@@ -9,9 +9,9 @@ package com.lzb.pipeline;
 public class SecondValve extends BaseValve {
 
     @Override
-    public void invoke(String s) {
+    public String invoke(String s) {
         s = s.replace("22", "second");
         System.out.println("22 被替换成 second:" + s);
-        next().invoke(s);
+        return s;
     }
 }
