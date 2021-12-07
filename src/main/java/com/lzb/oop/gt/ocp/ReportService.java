@@ -1,4 +1,4 @@
-package com.lzb.oop.gt;
+package com.lzb.oop.gt.ocp;
 
 import java.util.Collections;
 import java.util.List;
@@ -22,6 +22,9 @@ class ReportService {
         sendStatisticsByMail(statistics);
     }
 
+    /**
+     * 依赖 Spring 注入
+     */
     private List<OrderStatisticsConsumer> consumers;
     public void processV2() {
         // 获取当天的订单

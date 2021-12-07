@@ -1,4 +1,4 @@
-package com.lzb.oop.gt;
+package com.lzb.oop.gt.ocp;
 
 import lombok.Data;
 
