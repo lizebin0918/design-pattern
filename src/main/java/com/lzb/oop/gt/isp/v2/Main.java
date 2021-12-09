@@ -1,10 +1,11 @@
 package com.lzb.oop.gt.isp.v2;
 
-import com.lzb.oop.gt.isp.v1.TransactionType;
+import com.lzb.oop.gt.isp.TransactionType;
 import com.lzb.oop.gt.isp.v2.handler.DepositHandler;
 import com.lzb.oop.gt.isp.v2.handler.TransactionHandler;
+import com.lzb.oop.gt.isp.v2.handler.TransferHandler;
+import com.lzb.oop.gt.isp.v2.handler.WithdrawHandler;
 import com.lzb.oop.gt.isp.v2.request.ActualTransactionRequest;
-import com.lzb.oop.gt.isp.v2.request.TransactionRequest;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,12 +19,24 @@ import java.util.Map;
 public class Main {
 
     public static void main(String[] args) {
+
+        // 前端参数
         ActualTransactionRequest request = new ActualTransactionRequest();
+
+        // 类型
         TransactionType type = TransactionType.DEPOSIT;
-        Map<TransactionType, TransactionHandler<TransactionRequest>> handlers = new HashMap<>();
-        TransactionHandler deposit = new DepositHandler();
-        handlers.put(TransactionType.DEPOSIT, deposit);
-        handlers.get(type).handle(request);
+
+        // 容器注入
+        Map<TransactionType, TransactionHandler> handlers = new HashMap<>();
+        handlers.put(TransactionType.TRANSFER, new TransferHandler());
+        handlers.put(TransactionType.DEPOSIT, new DepositHandler());
+        handlers.put(TransactionType.WITHDRAW, new WithdrawHandler());
+
+        // 处理器
+        TransactionHandler handler = handlers.get(type);
+        if (handler != null) {
+            handler.handle(request);
+        }
     }
 
 }

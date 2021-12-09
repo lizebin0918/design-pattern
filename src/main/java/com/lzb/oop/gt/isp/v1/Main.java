@@ -1,5 +1,7 @@
 package com.lzb.oop.gt.isp.v1;
 
+import com.lzb.oop.gt.isp.TransactionType;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,7 +14,7 @@ import java.util.Map;
 public class Main {
 
     public static void main(String[] args) {
-        Map<TransactionType, TransferHandler> handlers = new HashMap<>();
+        Map<TransactionType, TransactionHandler> handlers = new HashMap<>();
         TransactionRequest request = new TransactionRequest();
         TransactionHandler handler = handlers.get(request.getType());
         if (handler != null) {

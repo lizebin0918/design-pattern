@@ -1,5 +1,7 @@
 package com.lzb.oop.gt.isp.v1;
 
+import com.lzb.oop.gt.isp.TransactionType;
+
 /**
  * 假设有一个银行的系统，对外提供存款、取款和转账的能力。
  * 它通过一个接口向外部系统暴露了它的这些能力，而不同能力的差异要通过请求的内容来区分。
