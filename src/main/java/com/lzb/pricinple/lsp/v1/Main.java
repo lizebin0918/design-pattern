@@ -1,4 +1,4 @@
-package com.lzb.pricinple.lsp;
+package com.lzb.pricinple.lsp.v1;
 /**
  * <br/>
  * Created on : 2021-04-09 21:32

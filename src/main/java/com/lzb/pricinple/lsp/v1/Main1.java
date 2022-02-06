@@ -1,4 +1,4 @@
-package com.lzb.pricinple.lsp;
+package com.lzb.pricinple.lsp.v1;
 /**
  * 扩展父类功能，不能改变父类原有功能<br/>
  * Created on : 2021-04-09 22:02
