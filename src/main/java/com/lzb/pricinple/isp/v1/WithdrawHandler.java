@@ -1,4 +1,4 @@
-package com.lzb.oop.gt.isp.v1;
+package com.lzb.pricinple.isp.v1;
 
 /**
  * 取钱

@@ -1,6 +1,6 @@
-package com.lzb.oop.gt.isp.v2.request;
+package com.lzb.pricinple.isp.v2.request;
 
-import com.lzb.oop.gt.isp.TransactionType;
+import com.lzb.pricinple.isp.TransactionType;
 
 /**
  * 接收具体的请求字段

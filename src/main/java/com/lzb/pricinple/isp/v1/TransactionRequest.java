@@ -1,6 +1,6 @@
-package com.lzb.oop.gt.isp.v1;
+package com.lzb.pricinple.isp.v1;
 
-import com.lzb.oop.gt.isp.TransactionType;
+import com.lzb.pricinple.isp.TransactionType;
 
 /**
  * 假设有一个银行的系统，对外提供存款、取款和转账的能力。
