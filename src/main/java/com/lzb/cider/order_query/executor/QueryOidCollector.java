@@ -1,7 +1,6 @@
-package com.lzb.cider.order_query;
+package com.lzb.cider.order_query.executor;
 
 import com.google.common.collect.Sets;
-import com.lzb.cider.order_query.executor.IQueryOidExecutor;
 import com.lzb.cider.order_query.query.OrderQuery;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -1,6 +1,8 @@
 package com.lzb.cider.order_query;
 
 import com.lzb.cider.order_query.executor.*;
+import com.lzb.cider.order_query.new_executor.NewQueryOidCollector;
+import com.lzb.cider.order_query.new_executor.QueryOidExecutorWrapper;
 import com.lzb.cider.order_query.query.OrderQuery;
 import lombok.extern.slf4j.Slf4j;
 
@@ -40,6 +42,18 @@ public class Main {
         List<Long> orderIds = collector.listOidForPage(query, 1, 10, "order_date_time", "desc");
 
         log.info("orderIds {}", orderIds);
+
+        /*---------------------------------------------------*/
+
+        List<QueryOidExecutorWrapper> executorWrappers = new ArrayList<>();
+        // 添加多种查询条件
+        executorWrappers.add(new QueryOidExecutorWrapper(() -> new QueryOidByAddressExecutor().listOid(query)));
+
+        NewQueryOidCollector newCollector = new NewQueryOidCollector(EXECUTOR_SERVICE, executorWrappers);
+
+        List<Long> orderIds1 = newCollector.listOidForPage(1, 10, "order_date_time", "desc");
+
+        log.info("orderIds1 {}", orderIds1);
     }
 
 }
