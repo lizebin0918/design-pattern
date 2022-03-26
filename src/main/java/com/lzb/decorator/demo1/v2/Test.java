@@ -11,7 +11,7 @@ public class Test {
 
     public static void main(String[] args) {
 
-        // 通过对象的嵌套，实现递归....
+        // 通过对象的嵌套，实现递归...............没啥特别的............
         PanCake panCake = new BasePanCake();
         panCake = new EggDecorator(panCake);
         panCake = new EggDecorator(panCake);
