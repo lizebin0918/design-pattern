@@ -1,4 +1,4 @@
-package com.lzb.decorator.v2;
+package com.lzb.decorator.demo1.v2;
 /**
  * 鸡蛋装饰器<br/>
  * Created on : 2021-05-15 20:53

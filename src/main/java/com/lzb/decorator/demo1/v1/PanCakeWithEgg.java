@@ -1,4 +1,4 @@
-package com.lzb.decorator.v1;
+package com.lzb.decorator.demo1.v1;
 /**
  * 加了鸡蛋的煎饼<br/>
  * Created on : 2021-05-15 20:26

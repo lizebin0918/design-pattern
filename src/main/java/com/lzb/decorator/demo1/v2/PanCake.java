@@ -1,4 +1,4 @@
-package com.lzb.decorator.v2;
+package com.lzb.decorator.demo1.v2;
 
 /**
  * 通过对象的嵌套，实现递归<br/>

@@ -1,4 +1,4 @@
-package com.lzb.decorator.v1;
+package com.lzb.decorator.demo1.v1;
 /**
  * 加鸡蛋、香肠<br/>
  * Created on : 2021-05-15 20:30
