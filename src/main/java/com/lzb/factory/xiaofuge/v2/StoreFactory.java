@@ -1,8 +1,8 @@
-package com.lzb.factory.v2;
+package com.lzb.factory.xiaofuge.v2;
 
-import com.lzb.factory.v2.impl.CardCommodityService;
-import com.lzb.factory.v2.impl.CouponCommodityService;
-import com.lzb.factory.v2.impl.GoodsCommodityService;
+import com.lzb.factory.xiaofuge.v2.impl.CardCommodityService;
+import com.lzb.factory.xiaofuge.v2.impl.CouponCommodityService;
+import com.lzb.factory.xiaofuge.v2.impl.GoodsCommodityService;
 
 public class StoreFactory {
 

@@ -1,13 +1,13 @@
-package com.lzb.factory.v1;
+package com.lzb.factory.xiaofuge.v1;
 
 import com.alibaba.fastjson.JSON;
-import com.lzb.factory.AwardReq;
-import com.lzb.factory.AwardRsp;
-import com.lzb.factory.v1.card.IQiYiCardService;
-import com.lzb.factory.v1.coupon.CouponResult;
-import com.lzb.factory.v1.coupon.CouponService;
-import com.lzb.factory.v1.goods.DeliverReq;
-import com.lzb.factory.v1.goods.GoodsService;
+import com.lzb.factory.xiaofuge.AwardReq;
+import com.lzb.factory.xiaofuge.AwardRsp;
+import com.lzb.factory.xiaofuge.v1.card.IQiYiCardService;
+import com.lzb.factory.xiaofuge.v1.coupon.CouponResult;
+import com.lzb.factory.xiaofuge.v1.coupon.CouponService;
+import com.lzb.factory.xiaofuge.v1.goods.DeliverReq;
+import com.lzb.factory.xiaofuge.v1.goods.GoodsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

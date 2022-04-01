@@ -1,4 +1,4 @@
-package com.lzb.factory.v1.goods;
+package com.lzb.factory.xiaofuge.v1.goods;
 
 import com.alibaba.fastjson.JSON;
 

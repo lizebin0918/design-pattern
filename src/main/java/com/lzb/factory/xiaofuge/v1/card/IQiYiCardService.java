@@ -1,4 +1,4 @@
-package com.lzb.factory.v1.card;
+package com.lzb.factory.xiaofuge.v1.card;
 
 /**
  * 模拟爱奇艺会员卡服务

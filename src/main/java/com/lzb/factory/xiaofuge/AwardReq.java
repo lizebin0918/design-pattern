@@ -1,4 +1,4 @@
-package com.lzb.factory;
+package com.lzb.factory.xiaofuge;
 
 import java.util.Map;
 

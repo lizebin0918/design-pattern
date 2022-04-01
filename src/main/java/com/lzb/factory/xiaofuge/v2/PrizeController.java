@@ -1,8 +1,8 @@
-package com.lzb.factory.v2;
+package com.lzb.factory.xiaofuge.v2;
 
 import com.alibaba.fastjson.JSON;
-import com.lzb.factory.AwardReq;
-import com.lzb.factory.AwardRsp;
+import com.lzb.factory.xiaofuge.AwardReq;
+import com.lzb.factory.xiaofuge.AwardRsp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

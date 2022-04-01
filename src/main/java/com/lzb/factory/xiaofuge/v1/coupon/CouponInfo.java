@@ -1,4 +1,4 @@
-package com.lzb.factory.v1.coupon;
+package com.lzb.factory.xiaofuge.v1.coupon;
 
 /**
  * 模拟优惠券，对象类

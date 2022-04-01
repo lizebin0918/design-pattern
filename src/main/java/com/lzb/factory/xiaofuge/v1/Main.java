@@ -1,8 +1,8 @@
-package com.lzb.factory.v1;
+package com.lzb.factory.xiaofuge.v1;
 
 import com.alibaba.fastjson.JSON;
-import com.lzb.factory.AwardReq;
-import com.lzb.factory.AwardRsp;
+import com.lzb.factory.xiaofuge.AwardReq;
+import com.lzb.factory.xiaofuge.AwardRsp;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashMap;

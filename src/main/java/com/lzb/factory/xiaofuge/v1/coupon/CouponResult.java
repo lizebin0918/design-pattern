@@ -1,14 +1,14 @@
-package com.lzb.factory;
+package com.lzb.factory.xiaofuge.v1.coupon;
 
 /**
- * 发奖结果反馈对象
+ * 优惠券返回结果类
  */
-public class AwardRsp {
+public class CouponResult {
 
     private String code; // 编码
     private String info; // 描述
 
-    public AwardRsp(String code, String info) {
+    public CouponResult(String code, String info) {
         this.code = code;
         this.info = info;
     }
@@ -28,5 +28,4 @@ public class AwardRsp {
     public void setInfo(String info) {
         this.info = info;
     }
-
 }
