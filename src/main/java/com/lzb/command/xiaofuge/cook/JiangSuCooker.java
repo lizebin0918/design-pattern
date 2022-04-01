@@ -1,4 +1,4 @@
-package com.lzb.command.cook;
+package com.lzb.command.xiaofuge.cook;
 
 /**
  * 江苏菜

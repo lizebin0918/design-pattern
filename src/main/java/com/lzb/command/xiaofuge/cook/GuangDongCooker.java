@@ -1,4 +1,4 @@
-package com.lzb.command.cook;
+package com.lzb.command.xiaofuge.cook;
 
 /**
  * 广东厨师
