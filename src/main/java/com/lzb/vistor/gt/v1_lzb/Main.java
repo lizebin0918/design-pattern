@@ -1,4 +1,4 @@
-package com.lzb.vistor.gt.v1;
+package com.lzb.vistor.gt.v1_lzb;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +20,8 @@ public class Main {
     public static void main(String[] args) {
         for (ResourceFile resourceFile : listAllResourceFiles("")) {
             resourceFile.extract2txt();
+            // 外部调用要加拼装逻辑
+            resourceFile.zip();
         }
     }
 
