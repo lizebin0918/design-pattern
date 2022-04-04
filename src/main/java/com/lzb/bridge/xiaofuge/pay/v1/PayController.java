@@ -1,4 +1,4 @@
-package com.lzb.bridge.pay.v1;
+package com.lzb.bridge.xiaofuge.pay.v1;
 
 
 import java.math.BigDecimal;

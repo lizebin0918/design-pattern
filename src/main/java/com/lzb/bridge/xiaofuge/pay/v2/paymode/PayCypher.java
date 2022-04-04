@@ -1,4 +1,4 @@
-package com.lzb.bridge.pay.v2.paymode;
+package com.lzb.bridge.xiaofuge.pay.v2.paymode;
 
 public class PayCypher implements IPayMode{
 

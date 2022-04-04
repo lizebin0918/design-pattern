@@ -1,7 +1,7 @@
-package com.lzb.bridge.pay.v2;
+package com.lzb.bridge.xiaofuge.pay.v2;
 
-import com.lzb.bridge.pay.v2.paymode.PayFaceMode;
-import com.lzb.bridge.pay.v2.paymode.PayFingerprintMode;
+import com.lzb.bridge.xiaofuge.pay.v2.paymode.PayFaceMode;
+import com.lzb.bridge.xiaofuge.pay.v2.paymode.PayFingerprintMode;
 
 import java.math.BigDecimal;
 

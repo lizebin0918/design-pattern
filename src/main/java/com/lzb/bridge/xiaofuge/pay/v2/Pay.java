@@ -1,6 +1,6 @@
-package com.lzb.bridge.pay.v2;
+package com.lzb.bridge.xiaofuge.pay.v2;
 
-import com.lzb.bridge.pay.v2.paymode.IPayMode;
+import com.lzb.bridge.xiaofuge.pay.v2.paymode.IPayMode;
 
 import java.math.BigDecimal;
 
