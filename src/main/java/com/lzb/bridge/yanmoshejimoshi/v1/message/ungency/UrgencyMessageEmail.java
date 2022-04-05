@@ -6,15 +6,16 @@ package com.lzb.bridge.yanmoshejimoshi.v1.message.ungency;
  *
  * @author lizebin
  */
-public class UngencyMessageEmail implements UngencyMessaage {
+public class UrgencyMessageEmail implements UrgencyMessaage {
 
     @Override
     public void send(String message, String toUser) {
-        System.out.println(String.format("发送email加急消息 %s 给 %s", message, toUser));
+        message = "加急-" + message;
+        System.out.println(String.format("发送email消息 %s 给 %s", message, toUser));
     }
 
     @Override
     public void readed(String messageId) {
-        System.out.println(String.format("email加急消息 %s 已读", messageId));
+        System.out.println(String.format("email消息 %s 已读", messageId));
     }
 }

@@ -8,7 +8,7 @@ import com.lzb.bridge.yanmoshejimoshi.v1.message.Message;
  *
  * @author lizebin
  */
-public interface UngencyMessaage extends Message {
+public interface UrgencyMessaage extends Message {
 
     /**
      * 加急消息需要关注【是否已读】
