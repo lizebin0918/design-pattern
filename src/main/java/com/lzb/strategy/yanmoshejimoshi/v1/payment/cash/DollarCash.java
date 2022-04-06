@@ -1,7 +1,7 @@
-package com.lzb.strategy.yanmoshejimoshi.payment.cash;
+package com.lzb.strategy.yanmoshejimoshi.v1.payment.cash;
 
-import com.lzb.strategy.yanmoshejimoshi.context.CashPaymentContext;
-import com.lzb.strategy.yanmoshejimoshi.payment.PaymentStrategy;
+import com.lzb.strategy.yanmoshejimoshi.v1.context.CashPaymentContext;
+import com.lzb.strategy.yanmoshejimoshi.v1.payment.PaymentStrategy;
 
 /**
  * 美金支付<br/>

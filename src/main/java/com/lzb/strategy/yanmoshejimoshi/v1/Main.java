@@ -1,11 +1,11 @@
-package com.lzb.strategy.yanmoshejimoshi;
+package com.lzb.strategy.yanmoshejimoshi.v1;
 
-import com.lzb.strategy.yanmoshejimoshi.context.CardPaymentContext;
-import com.lzb.strategy.yanmoshejimoshi.context.CashPaymentContext;
-import com.lzb.strategy.yanmoshejimoshi.payment.card.Card;
-import com.lzb.strategy.yanmoshejimoshi.payment.cash.DollarCash;
-import com.lzb.strategy.yanmoshejimoshi.payment.PaymentStrategy;
-import com.lzb.strategy.yanmoshejimoshi.payment.cash.RmbCash;
+import com.lzb.strategy.yanmoshejimoshi.v1.context.CardPaymentContext;
+import com.lzb.strategy.yanmoshejimoshi.v1.context.CashPaymentContext;
+import com.lzb.strategy.yanmoshejimoshi.v1.payment.PaymentStrategy;
+import com.lzb.strategy.yanmoshejimoshi.v1.payment.card.Card;
+import com.lzb.strategy.yanmoshejimoshi.v1.payment.cash.DollarCash;
+import com.lzb.strategy.yanmoshejimoshi.v1.payment.cash.RmbCash;
 
 /**
  * <br/>

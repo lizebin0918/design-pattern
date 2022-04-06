@@ -1,6 +1,6 @@
-package com.lzb.strategy.yanmoshejimoshi.context;
+package com.lzb.strategy.yanmoshejimoshi.v1.context;
 
-import com.lzb.strategy.yanmoshejimoshi.payment.PaymentStrategy;
+import com.lzb.strategy.yanmoshejimoshi.v1.payment.PaymentStrategy;
 import lombok.Getter;
 
 /**
