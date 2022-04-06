@@ -24,17 +24,19 @@ public class Main {
         PaymentStrategy cashPay = new CashPay();
         CashPayment cashPayment = new CashPayment("lizebin", "1", "CNY");
         PaymentContext context = new PaymentContext(cashPayment);
-        context.doPay(cashPay);
+        context.pay(cashPay);
 
         // 给B支付美金
         // CashPaymentContext peter = new CashPaymentContext("Peter", 1, dollar);
-        // peter.doPay();
+        // peter.pay();
 
         // 扩展：通过银行卡号支付
         PaymentStrategy cardPay = new CardPay();
         CardPayment cardPayment = new CardPayment("卡号", "lizebin", "1", "CNY");
         PaymentContext cardContext = new PaymentContext(cardPayment);
-        cardContext.doPay(cardPay);
+        // 类型有误
+        // cardContext.pay(cashPay);
+        cardContext.pay(cardPay);
 
     }
 

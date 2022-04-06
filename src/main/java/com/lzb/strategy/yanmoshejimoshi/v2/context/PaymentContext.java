@@ -17,7 +17,7 @@ public class PaymentContext {
 
     protected Payment payment;
 
-    public void doPay(PaymentStrategy strategy) {
+    public void pay(PaymentStrategy strategy) {
         strategy.pay(this);
     }
 
