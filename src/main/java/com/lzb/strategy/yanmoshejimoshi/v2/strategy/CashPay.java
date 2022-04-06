@@ -11,10 +11,10 @@ import com.lzb.strategy.yanmoshejimoshi.v2.payment.Payment;
  *
  * @author cidervisioncase
  */
-public class CashPay implements PaymentStrategy {
+public class CashPay implements PaymentStrategy<CashPayment> {
 
     @Override
-    public void pay(PaymentContext paymentContext) {
+    public void pay(PaymentContext<CashPayment> paymentContext) {
 
         CashPayment payment = (CashPayment) paymentContext.getPayment();
 

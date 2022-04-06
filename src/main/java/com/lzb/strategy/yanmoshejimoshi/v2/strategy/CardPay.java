@@ -10,10 +10,10 @@ import com.lzb.strategy.yanmoshejimoshi.v2.payment.CardPayment;
  *
  * @author cidervisioncase
  */
-public class CardPay implements PaymentStrategy {
+public class CardPay implements PaymentStrategy<CardPayment> {
 
     @Override
-    public void pay(PaymentContext paymentContext) {
+    public void pay(PaymentContext<CardPayment> paymentContext) {
         System.out.println("银行卡转账:" + JSON.toJSONString(paymentContext.getPayment()));
     }
 }

@@ -8,7 +8,8 @@ import com.lzb.strategy.yanmoshejimoshi.v2.strategy.CashPay;
 import com.lzb.strategy.yanmoshejimoshi.v2.strategy.PaymentStrategy;
 
 /**
- * <br/>
+ * 这里的现金支付和卡号支付，并不是平行（可替代）关系，因为两个策略的入参不一样。类比多个排序算法，可以针对不同类型<br/>
+ * 但是人民币和美金支付是相同策略
  * Created on : 2022-04-06 22:47
  *
  * @author cidervisioncase
@@ -21,20 +22,16 @@ public class Main {
         // PaymentStrategy dollar = new DollarCash();
 
         // 给A支付人民币
-        PaymentStrategy cashPay = new CashPay();
+        PaymentStrategy<CashPayment> cashPay = new CashPay();
         CashPayment cashPayment = new CashPayment("lizebin", "1", "CNY");
-        PaymentContext context = new PaymentContext(cashPayment);
+        PaymentContext<CashPayment> context = new PaymentContext<>(cashPayment);
         context.pay(cashPay);
 
-        // 给B支付美金
-        // CashPaymentContext peter = new CashPaymentContext("Peter", 1, dollar);
-        // peter.pay();
-
         // 扩展：通过银行卡号支付
-        PaymentStrategy cardPay = new CardPay();
+        PaymentStrategy<CardPayment> cardPay = new CardPay();
         CardPayment cardPayment = new CardPayment("卡号", "lizebin", "1", "CNY");
-        PaymentContext cardContext = new PaymentContext(cardPayment);
-        // 类型有误
+        PaymentContext<CardPayment> cardContext = new PaymentContext<>(cardPayment);
+        // 类型有误，
         // cardContext.pay(cashPay);
         cardContext.pay(cardPay);
 
