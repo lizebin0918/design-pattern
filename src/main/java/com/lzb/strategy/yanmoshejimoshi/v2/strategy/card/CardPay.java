@@ -1,8 +1,9 @@
-package com.lzb.strategy.yanmoshejimoshi.v2.strategy;
+package com.lzb.strategy.yanmoshejimoshi.v2.strategy.card;
 
 import com.alibaba.fastjson.JSON;
 import com.lzb.strategy.yanmoshejimoshi.v2.context.PaymentContext;
 import com.lzb.strategy.yanmoshejimoshi.v2.payment.CardPayment;
+import com.lzb.strategy.yanmoshejimoshi.v2.strategy.PaymentStrategy;
 
 /**
  * 银行卡支付<br/>

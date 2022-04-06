@@ -24,9 +24,4 @@ public class CashPayment implements Payment {
      */
     private String money;
 
-    /**
-     * 币种
-     */
-    private String currency;
-
 }
