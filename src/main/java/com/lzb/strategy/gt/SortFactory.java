@@ -1,4 +1,4 @@
-package com.lzb.strategy;
+package com.lzb.strategy.gt;
 
 import java.util.HashMap;
 import java.util.Map;

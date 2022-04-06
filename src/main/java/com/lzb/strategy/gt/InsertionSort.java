@@ -1,4 +1,4 @@
-package com.lzb.strategy;
+package com.lzb.strategy.gt;
 /**
  * 插入排序<br/>
  * Created on : 2021-05-07 00:31
