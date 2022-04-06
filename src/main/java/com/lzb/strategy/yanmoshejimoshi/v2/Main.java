@@ -21,9 +21,9 @@ public class Main {
         // PaymentStrategy dollar = new DollarCash();
 
         // 给A支付人民币
-        PaymentStrategy<CashPayment> cashPay = new CashPay<>();
+        PaymentStrategy cashPay = new CashPay();
         CashPayment cashPayment = new CashPayment("lizebin", "1", "CNY");
-        PaymentContext<CashPayment> context = new PaymentContext<>(cashPayment);
+        PaymentContext context = new PaymentContext(cashPayment);
         context.doPay(cashPay);
 
         // 给B支付美金
@@ -31,9 +31,9 @@ public class Main {
         // peter.doPay();
 
         // 扩展：通过银行卡号支付
-        PaymentStrategy<CardPayment> cardPay = new CardPay();
+        PaymentStrategy cardPay = new CardPay();
         CardPayment cardPayment = new CardPayment("卡号", "lizebin", "1", "CNY");
-        PaymentContext<CardPayment> cardContext = new PaymentContext<>(cardPayment);
+        PaymentContext cardContext = new PaymentContext(cardPayment);
         cardContext.doPay(cardPay);
 
     }

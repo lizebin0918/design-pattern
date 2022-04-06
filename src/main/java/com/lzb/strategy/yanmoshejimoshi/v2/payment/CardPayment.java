@@ -11,7 +11,7 @@ import lombok.Getter;
  */
 @Getter
 @AllArgsConstructor
-public class CardPayment {
+public class CardPayment implements Payment {
 
     /**
      * 卡号

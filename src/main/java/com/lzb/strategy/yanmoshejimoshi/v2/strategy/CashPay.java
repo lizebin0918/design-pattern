@@ -3,6 +3,7 @@ package com.lzb.strategy.yanmoshejimoshi.v2.strategy;
 import com.alibaba.fastjson.JSON;
 import com.lzb.strategy.yanmoshejimoshi.v2.context.PaymentContext;
 import com.lzb.strategy.yanmoshejimoshi.v2.payment.CashPayment;
+import com.lzb.strategy.yanmoshejimoshi.v2.payment.Payment;
 
 /**
  * 现金支付<br/>
@@ -10,14 +11,15 @@ import com.lzb.strategy.yanmoshejimoshi.v2.payment.CashPayment;
  *
  * @author cidervisioncase
  */
-public class CashPay<CashPayment> implements PaymentStrategy<CashPayment> {
+public class CashPay implements PaymentStrategy {
 
     @Override
-    public void pay(PaymentContext<CashPayment> paymentContext) {
+    public void pay(PaymentContext paymentContext) {
 
-        CashPayment payment = paymentContext.getPayment();
+        CashPayment payment = (CashPayment) paymentContext.getPayment();
 
         System.out.println("现金支付:" + JSON.toJSONString(payment));
 
     }
+
 }

@@ -13,11 +13,11 @@ import lombok.Getter;
  */
 @Getter
 @AllArgsConstructor
-public class PaymentContext<T extends Payment> {
+public class PaymentContext {
 
-    protected T payment;
+    protected Payment payment;
 
-    public void doPay(PaymentStrategy<T> strategy) {
+    public void doPay(PaymentStrategy strategy) {
         strategy.pay(this);
     }
 

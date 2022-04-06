@@ -1,5 +1,6 @@
 package com.lzb.strategy.yanmoshejimoshi.v2.payment;
 
+import com.lzb.bridge.xiaofuge.pay.v2.Pay;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -11,7 +12,7 @@ import lombok.Getter;
  */
 @Getter
 @AllArgsConstructor
-public class CashPayment {
+public class CashPayment implements Payment {
 
     /**
      * 收款方
