@@ -1,5 +1,6 @@
 package com.lzb.strategy.yanmoshejimoshi.v2.context;
 
+import com.lzb.strategy.yanmoshejimoshi.v2.payment.Payment;
 import com.lzb.strategy.yanmoshejimoshi.v2.strategy.PaymentStrategy;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,7 +13,7 @@ import lombok.Getter;
  */
 @Getter
 @AllArgsConstructor
-public class PaymentContext<T> {
+public class PaymentContext<T extends Payment> {
 
     protected T payment;
 
