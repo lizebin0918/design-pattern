@@ -1,4 +1,4 @@
-package com.lzb.refactor_pratice.lzb;
+package com.lzb.refactor_pratice;
 
 /**
  * 获取实际值<br/>

@@ -1,7 +1,5 @@
 package com.lzb.refactor_pratice;
 
-import com.lzb.refactor_pratice.lzb.Length;
-import com.lzb.refactor_pratice.lzb.Unit;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
