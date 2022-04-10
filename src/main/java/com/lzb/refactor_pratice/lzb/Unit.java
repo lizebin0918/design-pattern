@@ -3,8 +3,6 @@ package com.lzb.refactor_pratice.lzb;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import java.util.stream.Stream;
-
 /**
  * 单位
  */
@@ -15,7 +13,7 @@ public enum Unit implements Exchange {
     /**
      * 英尺
      */
-    FOOT("f") {
+    FOOT {
         @Override
         public double exchange(double value, Unit unit) {
             if (YARD == unit) {
@@ -30,7 +28,7 @@ public enum Unit implements Exchange {
     /**
      * 英寸
      */
-    INCH("inch") {
+    INCH {
         @Override
         public double exchange(double value, Unit unit) {
             if (unit == FOOT) {
@@ -45,7 +43,7 @@ public enum Unit implements Exchange {
     /**
      * 码
      */
-    YARD("yard") {
+    YARD {
         @Override
         public double exchange(double value, Unit unit) {
             if (INCH == unit) {
@@ -57,9 +55,4 @@ public enum Unit implements Exchange {
         }
     };
 
-    private String value;
-
-    public static Unit of(String unit) {
-        return Stream.of(Unit.values()).filter(item -> item.getValue().equals(unit)).findFirst().get();
-    }
 }

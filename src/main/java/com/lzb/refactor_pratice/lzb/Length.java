@@ -16,23 +16,24 @@ import lombok.Getter;
  * 1 英尺应该等于 12 英寸
  * 1 码应该等于 36 英寸
  * 6 英寸应该等于 1/2 英尺
+ *
+ * 旧的不变、新的创建、一步切换、旧的删掉
+ *
  */
 @Getter
 @AllArgsConstructor
 public class Length {
 
     private final double value;
-    private final String unit;
+    private final Unit unit;
 
     /**
      * 单位转换
      * @param unit
      * @return
      */
-    public Length as(String unit) {
-        Unit sourceUnit = Unit.of(this.unit);
-        Unit targetUnit = Unit.of(unit);
-        return new Length(sourceUnit.exchange(this.value, targetUnit), targetUnit.getValue());
+    public Length as(Unit unit) {
+        return new Length(this.unit.exchange(this.value, unit), unit);
     }
 
 }
