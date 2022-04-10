@@ -1,4 +1,4 @@
-package com.lzb.refactor_pratice;
+package com.lzb.refactor_pratice.length;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

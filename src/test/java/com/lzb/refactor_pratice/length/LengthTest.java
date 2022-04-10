@@ -1,4 +1,4 @@
-package com.lzb.refactor_pratice;
+package com.lzb.refactor_pratice.length;
 
 import org.junit.Test;
 
