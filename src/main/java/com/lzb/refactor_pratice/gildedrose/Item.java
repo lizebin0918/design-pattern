@@ -35,13 +35,18 @@ public class Item {
      * 过了一天
      */
     public void passOneDay() {
-        boolean isBackstagePasses = isBackstagePasses();
-        boolean isSulfuras = isSulfuras();
-        boolean idAgedBrie = isAgedBrie();
-        if (!idAgedBrie
-                && !isBackstagePasses) {
+        updateQuality();
+        updateSellInDays();
+        if (isExpired()) {
+            updateQualityAfterExpiration();
+        }
+    }
+
+    private void updateQuality() {
+        if (!isAgedBrie()
+                && !isBackstagePasses()) {
             if (quality > 0) {
-                if (!isSulfuras) {
+                if (!isSulfuras()) {
                     quality = quality - 1;
                 }
             }
@@ -49,7 +54,7 @@ public class Item {
             if (quality < 50) {
                 quality = quality + 1;
 
-                if (isBackstagePasses) {
+                if (isBackstagePasses()) {
                     if (sell_in < 11) {
                         if (quality < 50) {
                             quality = quality + 1;
@@ -64,27 +69,33 @@ public class Item {
                 }
             }
         }
+    }
 
-        if (!isSulfuras) {
-            sell_in = sell_in - 1;
-        }
-
-        if (sell_in < 0) {
-            if (!idAgedBrie) {
-                if (!isBackstagePasses) {
-                    if (quality > 0) {
-                        if (!isSulfuras) {
-                            quality = quality - 1;
-                        }
+    private void updateQualityAfterExpiration() {
+        if (!isAgedBrie()) {
+            if (!isBackstagePasses()) {
+                if (quality > 0) {
+                    if (!isSulfuras()) {
+                        quality = quality - 1;
                     }
-                } else {
-                    quality = quality - quality;
                 }
             } else {
-                if (quality < 50) {
-                    quality = quality + 1;
-                }
+                quality = quality - quality;
             }
+        } else {
+            if (quality < 50) {
+                quality = quality + 1;
+            }
+        }
+    }
+
+    private boolean isExpired() {
+        return sell_in < 0;
+    }
+
+    private void updateSellInDays() {
+        if (!isSulfuras()) {
+            sell_in = sell_in - 1;
         }
     }
 }
