@@ -4,13 +4,29 @@ public class Item {
 
     public String name;
 
-    public int sell_in;
+    public int sellIn;
 
     public int quality;
 
-    public Item(String name, int sell_in, int quality) {
+    public static Item createBackstagePasses(int sellIn, int quality) {
+        return new Item("Backstage passes to a TAFKAL80ETC concert", sellIn, quality);
+    }
+
+    public static Item createAgedBrie(int sellIn, int quality) {
+        return new Item("Aged Brie", sellIn, quality);
+    }
+
+    public static Item createSulfuras(int sellIn, int quality) {
+        return new Item("Sulfuras, Hand of Ragnaros", sellIn, quality);
+    }
+
+    public static Item createNormal(String name, int sellIn, int quality) {
+        return new Item(name, sellIn, quality);
+    }
+
+    public Item(String name, int sellIn, int quality) {
         this.name = name;
-        this.sell_in = sell_in;
+        this.sellIn = sellIn;
         this.quality = quality;
     }
 
@@ -28,7 +44,7 @@ public class Item {
 
     @Override
     public String toString() {
-        return this.name + ", " + this.sell_in + ", " + this.quality;
+        return this.name + ", " + this.sellIn + ", " + this.quality;
     }
 
     /**
@@ -55,13 +71,13 @@ public class Item {
                 quality = quality + 1;
 
                 if (isBackstagePasses()) {
-                    if (sell_in < 11) {
+                    if (sellIn < 11) {
                         if (quality < 50) {
                             quality = quality + 1;
                         }
                     }
 
-                    if (sell_in < 6) {
+                    if (sellIn < 6) {
                         if (quality < 50) {
                             quality = quality + 1;
                         }
@@ -90,12 +106,12 @@ public class Item {
     }
 
     private boolean isExpired() {
-        return sell_in < 0;
+        return sellIn < 0;
     }
 
     private void updateSellInDays() {
         if (!isSulfuras()) {
-            sell_in = sell_in - 1;
+            sellIn = sellIn - 1;
         }
     }
 }

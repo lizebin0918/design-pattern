@@ -8,7 +8,7 @@ public class ItemTest {
 
     @Test
     public void should_double_increase_backstage_pass_value() {
-        Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 11, 20);
+        Item item = Item.createBackstagePasses(11, 20);
         item.passOneDay();
         assertEquals(item.quality, 21);
         item.passOneDay();
