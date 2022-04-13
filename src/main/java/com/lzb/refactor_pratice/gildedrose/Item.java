@@ -43,13 +43,10 @@ public class Item {
     }
 
     protected void updateQuality() {
-        if (!(isAgedBrie() || isBackstagePasses())) {
-            if (quality > 0) {
-                if (!isSulfuras()) {
-                    quality = quality - 1;
-                }
-            }
+        if (quality <= 0) {
+            return;
         }
+        quality = quality - 1;
     }
 
     protected void updateQualityAfterExpiration() {
