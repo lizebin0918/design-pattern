@@ -72,21 +72,16 @@ public class Item {
     }
 
     protected void updateQualityAfterExpiration() {
-        if (!isAgedBrie()) {
-            if (!isBackstagePasses()) {
-                if (quality > 0) {
-                    if (!isSulfuras()) {
-                        quality = quality - 1;
-                    }
-                }
-            } else {
-                quality = quality - quality;
-            }
-        } else {
-            if (quality < 50) {
-                quality = quality + 1;
-            }
+        if (isAgedBrie() && isBackstagePasses()) {
+            return;
         }
+        if (quality < 0) {
+            return;
+        }
+        if (isSulfuras()) {
+            return;
+        }
+        quality = quality - 1;
     }
 
     protected boolean isExpired() {
