@@ -14,15 +14,15 @@ public class Item {
         this.quality = quality;
     }
 
-    public boolean isAgedBrie() {
+    protected boolean isAgedBrie() {
         return false;
     }
 
-    public boolean isSulfuras() {
+    protected boolean isSulfuras() {
         return false;
     }
 
-    public boolean isBackstagePasses() {
+    protected boolean isBackstagePasses() {
         return false;
     }
 
@@ -43,13 +43,14 @@ public class Item {
     }
 
     protected void updateQuality() {
-        if (quality <= 0) {
-            return;
-        }
-        quality = quality - 1;
+        decreaseQuality();
     }
 
     protected void updateQualityAfterExpiration() {
+        decreaseQuality();
+    }
+
+    private void decreaseQuality() {
         if (quality >= 0) {
             quality = quality - 1;
         }

@@ -8,10 +8,10 @@ package com.lzb.refactor_pratice.gildedrose;
  */
 public class Backstage extends Item {
 
-    private static final String BACKSTAGE_NAME = "Backstage";
+    private static final String BACKSTAGE_NAME = "Backstage passes to a TAFKAL80ETC concert";
 
-    public Backstage(String name, int sell_in, int quality) {
-        super(name, sell_in, quality);
+    public Backstage(int sellIn, int quality) {
+        super(BACKSTAGE_NAME, sellIn, quality);
     }
 
     @Override
@@ -26,21 +26,22 @@ public class Backstage extends Item {
 
     @Override
     public void updateQuality() {
-        if (quality < 50) {
-            quality = quality + 1;
+        increaseQuality();
 
-            if (sellIn < 11) {
-                if (quality < 50) {
-                    quality = quality + 1;
-                }
-            }
-
-            if (sellIn < 6) {
-                if (quality < 50) {
-                    quality = quality + 1;
-                }
-            }
+        if (sellIn < 11) {
+            increaseQuality();
         }
+
+        if (sellIn < 6) {
+            increaseQuality();
+        }
+    }
+
+    private void increaseQuality() {
+        if (quality >= 50) {
+            return;
+        }
+        quality = quality + 1;
     }
 
 }

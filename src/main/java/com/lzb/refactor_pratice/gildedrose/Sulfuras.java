@@ -8,10 +8,10 @@ package com.lzb.refactor_pratice.gildedrose;
  */
 public class Sulfuras extends Item {
 
-    private static final String SULFURAS_NAME = "Sulfuras";
+    private static final String SULFURAS_NAME = "Sulfuras, Hand of Ragnaros";
 
-    public Sulfuras(String name, int sell_in, int quality) {
-        super(name, sell_in, quality);
+    public Sulfuras(int sellIn, int quality) {
+        super(SULFURAS_NAME, sellIn, quality);
     }
 
     @Override
@@ -27,12 +27,5 @@ public class Sulfuras extends Item {
 
     @Override
     public void updateQuality() {
-        if (quality <= 0) {
-            return;
-        }
-        if (isSulfuras()) {
-            return;
-        }
-        quality = quality - 1;
     }
 }
