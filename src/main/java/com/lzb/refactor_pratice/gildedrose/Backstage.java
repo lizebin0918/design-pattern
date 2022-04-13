@@ -20,9 +20,27 @@ public class Backstage extends Item {
     }
 
     @Override
-    protected void updateQualityAfterExpiration() {
-        quality = quality - quality;
+    public void updateQualityAfterExpiration() {
+        quality = 0;
     }
 
+    @Override
+    public void updateQuality() {
+        if (quality < 50) {
+            quality = quality + 1;
+
+            if (sellIn < 11) {
+                if (quality < 50) {
+                    quality = quality + 1;
+                }
+            }
+
+            if (sellIn < 6) {
+                if (quality < 50) {
+                    quality = quality + 1;
+                }
+            }
+        }
+    }
 
 }

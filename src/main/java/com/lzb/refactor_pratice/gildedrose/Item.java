@@ -49,24 +49,6 @@ public class Item {
                     quality = quality - 1;
                 }
             }
-        } else {
-            if (quality < 50) {
-                quality = quality + 1;
-
-                if (isBackstagePasses()) {
-                    if (sellIn < 11) {
-                        if (quality < 50) {
-                            quality = quality + 1;
-                        }
-                    }
-
-                    if (sellIn < 6) {
-                        if (quality < 50) {
-                            quality = quality + 1;
-                        }
-                    }
-                }
-            }
         }
     }
 

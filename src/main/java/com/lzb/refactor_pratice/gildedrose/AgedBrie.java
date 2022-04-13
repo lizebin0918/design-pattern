@@ -25,4 +25,12 @@ public class AgedBrie extends Item {
             quality = quality + 1;
         }
     }
+
+    @Override
+    public void updateQuality() {
+        if (quality >= 50) {
+            return;
+        }
+        quality = quality + 1;
+    }
 }
