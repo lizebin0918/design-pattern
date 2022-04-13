@@ -70,17 +70,17 @@ public class TextTestFixture {
         printStream.println("OMGHAI!");
 
         Item[] items = new Item[] {
-                Item.createNormal("+5 Dexterity Vest", 10, 20), //
-                Item.createAgedBrie( 2, 0), //
-                Item.createNormal("Elixir of the Mongoose", 5, 7), //
-                Item.createSulfuras(0, 80), //
-                Item.createSulfuras( -1, 80),
-                Item.createBackstagePasses( 15, 20),
-                Item.createBackstagePasses(10, 49),
-                Item.createBackstagePasses(5, 49),
-                Item.createBackstagePasses( 1, 20),
+                new NormalItem("+5 Dexterity Vest", 10, 20), //
+                new AgedBrie(2, 0), //
+                new NormalItem("Elixir of the Mongoose", 5, 7), //
+                new Sulfuras("Sulfuras, Hand of Ragnaros", 0, 80), //
+                new Sulfuras("Sulfuras, Hand of Ragnaros", -1, 80),
+                new Backstage("Backstage passes to a TAFKAL80ETC concert", 15, 20),
+                new Backstage("Backstage passes to a TAFKAL80ETC concert", 10, 49),
+                new Backstage("Backstage passes to a TAFKAL80ETC concert", 5, 49),
+                new Backstage("Backstage passes to a TAFKAL80ETC concert", 1, 20),
                 // this conjured item does not work properly yet
-                Item.createNormal("Conjured Mana Cake", 3, 6) };
+                new NormalItem("Conjured Mana Cake", 3, 6)};
 
         GildedRose app = new GildedRose(items);
 

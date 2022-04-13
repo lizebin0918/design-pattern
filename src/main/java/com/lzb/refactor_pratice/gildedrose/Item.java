@@ -8,22 +8,6 @@ public class Item {
 
     public int quality;
 
-    public static Item createBackstagePasses(int sellIn, int quality) {
-        return new Backstage("Backstage passes to a TAFKAL80ETC concert", sellIn, quality);
-    }
-
-    public static Item createAgedBrie(int sellIn, int quality) {
-        return new AgedBrie(sellIn, quality);
-    }
-
-    public static Item createSulfuras(int sellIn, int quality) {
-        return new Sulfuras("Sulfuras, Hand of Ragnaros", sellIn, quality);
-    }
-
-    public static Item createNormal(String name, int sellIn, int quality) {
-        return new Item(name, sellIn, quality);
-    }
-
     public Item(String name, int sellIn, int quality) {
         this.name = name;
         this.sellIn = sellIn;
@@ -110,8 +94,6 @@ public class Item {
     }
 
     protected void updateSellInDays() {
-        if (!isSulfuras()) {
-            sellIn = sellIn - 1;
-        }
+        sellIn = sellIn - 1;
     }
 }

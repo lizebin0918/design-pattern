@@ -19,7 +19,7 @@ public class Sulfuras extends Item {
         return true;
     }
 
-    /*@Override
+    @Override
     public void updateSellInDays() {
-    }*/
+    }
 }
