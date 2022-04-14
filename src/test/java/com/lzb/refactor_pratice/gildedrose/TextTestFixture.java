@@ -69,7 +69,7 @@ public class TextTestFixture {
 
         printStream.println("OMGHAI!");
 
-        Item[] items = new Item[] {
+        AbstractItem[] items = new AbstractItem[] {
                 new NormalItem("+5 Dexterity Vest", 10, 20), //
                 new AgedBrie(2, 0), //
                 new NormalItem("Elixir of the Mongoose", 5, 7), //
@@ -89,7 +89,7 @@ public class TextTestFixture {
         for (int i = 0; i < days; i++) {
             printStream.println("-------- day " + i + " --------");
             printStream.println("name, sellIn, quality");
-            for (Item item : items) {
+            for (AbstractItem item : items) {
                 printStream.println(item);
             }
             printStream.println();

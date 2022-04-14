@@ -8,7 +8,7 @@ public class ItemTest {
 
     @Test
     public void should_double_increase_backstage_pass_value() {
-        Item item = new Backstage(11, 20);
+        AbstractItem item = new Backstage(11, 20);
         item.passOneDay();
         assertEquals(item.quality, 21);
         item.passOneDay();

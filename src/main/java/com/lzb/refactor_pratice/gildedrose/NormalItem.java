@@ -6,9 +6,19 @@ package com.lzb.refactor_pratice.gildedrose;
  *
  * @author cidervisioncase
  */
-public class NormalItem extends Item {
+public class NormalItem extends AbstractItem {
 
     public NormalItem(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
+    }
+
+    @Override
+    protected void updateQuality() {
+        decreaseQuality();
+    }
+
+    @Override
+    protected void updateQualityAfterExpiration() {
+        decreaseSellInDays();
     }
 }

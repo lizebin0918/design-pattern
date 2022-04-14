@@ -6,7 +6,7 @@ package com.lzb.refactor_pratice.gildedrose;
  *
  * @author lizebin
  */
-public class Backstage extends Item {
+public class Backstage extends AbstractItem {
 
     private static final String BACKSTAGE_NAME = "Backstage passes to a TAFKAL80ETC concert";
 

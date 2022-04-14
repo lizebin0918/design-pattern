@@ -10,7 +10,7 @@ public class GildedRoseTest {
 
     @Test
     public void foo() {
-        Item[] items = new Item[] { new Item("foo", 1, 5) };
+        AbstractItem[] items = new AbstractItem[] { new NormalItem("foo", 1, 5) };
         GildedRose app = new GildedRose(items);
         app.passOneDay();
         assertEquals("foo", app.items[0].name);
