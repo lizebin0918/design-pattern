@@ -7,7 +7,7 @@ public class Accounts {
 
         output.setFirstName(person.getFirstName());
         output.setLastName(person.getLastName());
-        output.setEmailAddress(person.getFirstName().substring(0, 1) + person.getLastName() + "@acme.com");
+        output.setEmailAddress(person.getFirstName().charAt(0) + person.getLastName() + "@acme.com");
 
         return output;
     }
