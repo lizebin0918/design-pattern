@@ -1,6 +1,6 @@
 package com.lzb.refactor_pratice.gildedrose;
 
-public class Item {
+public abstract class AbstractItem {
 
     public String name;
 
@@ -8,7 +8,7 @@ public class Item {
 
     public int quality;
 
-    public Item(String name, int sellIn, int quality) {
+    public AbstractItem(String name, int sellIn, int quality) {
         this.name = name;
         this.sellIn = sellIn;
         this.quality = quality;
@@ -22,9 +22,7 @@ public class Item {
         return false;
     }
 
-    protected boolean isBackstagePasses() {
-        return false;
-    }
+    protected boolean isBackstagePasses() { return false; }
 
     @Override
     public String toString() {
@@ -36,31 +34,27 @@ public class Item {
      */
     public void passOneDay() {
         updateQuality();
-        updateSellInDays();
+        decreaseSellInDays();
         if (isExpired()) {
             updateQualityAfterExpiration();
         }
     }
 
-    protected void updateQuality() {
-        decreaseQuality();
-    }
+    protected abstract void updateQuality();
 
-    protected void updateQualityAfterExpiration() {
-        decreaseQuality();
-    }
+    protected abstract void updateQualityAfterExpiration();
 
-    private void decreaseQuality() {
+    protected void decreaseQuality() {
         if (quality >= 0) {
             quality = quality - 1;
         }
     }
 
-    protected boolean isExpired() {
+    private boolean isExpired() {
         return sellIn < 0;
     }
 
-    protected void updateSellInDays() {
+    protected void decreaseSellInDays() {
         sellIn = sellIn - 1;
     }
 }

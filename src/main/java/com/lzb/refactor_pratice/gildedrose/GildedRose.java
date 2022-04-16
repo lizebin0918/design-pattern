@@ -20,14 +20,14 @@ package com.lzb.refactor_pratice.gildedrose;
  *
  */
 public class GildedRose {
-    Item[] items;
+    AbstractItem[] items;
 
-    public GildedRose(Item[] items) {
+    public GildedRose(AbstractItem[] items) {
         this.items = items;
     }
 
     public void passOneDay() {
-        for (Item item : items) {
+        for (AbstractItem item : items) {
             item.passOneDay();
         }
     }

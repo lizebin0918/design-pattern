@@ -6,7 +6,7 @@ package com.lzb.refactor_pratice.gildedrose;
  *
  * @author lizebin
  */
-public class Sulfuras extends Item {
+public class Sulfuras extends AbstractItem {
 
     private static final String SULFURAS_NAME = "Sulfuras, Hand of Ragnaros";
 
@@ -20,7 +20,7 @@ public class Sulfuras extends Item {
     }
 
     @Override
-    public void updateSellInDays() {}
+    public void decreaseSellInDays() {}
 
     @Override
     public void updateQualityAfterExpiration() {}

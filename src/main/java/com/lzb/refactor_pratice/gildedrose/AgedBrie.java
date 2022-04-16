@@ -6,7 +6,7 @@ package com.lzb.refactor_pratice.gildedrose;
  *
  * @author lizebin
  */
-public class AgedBrie extends Item {
+public class AgedBrie extends AbstractItem {
 
     private static final String AGED_BRIE_NAME = "Aged Brie";
 
