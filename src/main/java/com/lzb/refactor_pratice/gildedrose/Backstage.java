@@ -6,12 +6,12 @@ package com.lzb.refactor_pratice.gildedrose;
  *
  * @author lizebin
  */
-public class Backstage extends Item {
+public class Backstage extends AbstractItem {
 
-    private static final String BACKSTAGE_NAME = "Backstage";
+    private static final String BACKSTAGE_NAME = "Backstage passes to a TAFKAL80ETC concert";
 
-    public Backstage(String name, int sell_in, int quality) {
-        super(name, sell_in, quality);
+    public Backstage(int sellIn, int quality) {
+        super(BACKSTAGE_NAME, sellIn, quality);
     }
 
     @Override
@@ -20,9 +20,28 @@ public class Backstage extends Item {
     }
 
     @Override
-    protected void updateQualityAfterExpiration() {
-        quality = quality - quality;
+    public void updateQualityAfterExpiration() {
+        quality = 0;
     }
 
+    @Override
+    public void updateQuality() {
+        increaseQuality();
+
+        if (sellIn < 11) {
+            increaseQuality();
+        }
+
+        if (sellIn < 6) {
+            increaseQuality();
+        }
+    }
+
+    private void increaseQuality() {
+        if (quality >= 50) {
+            return;
+        }
+        quality = quality + 1;
+    }
 
 }

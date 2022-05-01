@@ -1,4 +1,4 @@
-package com.lzb.pricinple.ocp;
+package com.lzb.pricinple.ocp.gt;
 
 import lombok.Data;
 

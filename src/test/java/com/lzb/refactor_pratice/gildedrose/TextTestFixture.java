@@ -69,16 +69,16 @@ public class TextTestFixture {
 
         printStream.println("OMGHAI!");
 
-        Item[] items = new Item[] {
+        AbstractItem[] items = new AbstractItem[] {
                 new NormalItem("+5 Dexterity Vest", 10, 20), //
                 new AgedBrie(2, 0), //
                 new NormalItem("Elixir of the Mongoose", 5, 7), //
-                new Sulfuras("Sulfuras, Hand of Ragnaros", 0, 80), //
-                new Sulfuras("Sulfuras, Hand of Ragnaros", -1, 80),
-                new Backstage("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-                new Backstage("Backstage passes to a TAFKAL80ETC concert", 10, 49),
-                new Backstage("Backstage passes to a TAFKAL80ETC concert", 5, 49),
-                new Backstage("Backstage passes to a TAFKAL80ETC concert", 1, 20),
+                new Sulfuras(0, 80), //
+                new Sulfuras(-1, 80),
+                new Backstage(15, 20),
+                new Backstage(10, 49),
+                new Backstage( 5, 49),
+                new Backstage(1, 20),
                 // this conjured item does not work properly yet
                 new NormalItem("Conjured Mana Cake", 3, 6)};
 
@@ -89,7 +89,7 @@ public class TextTestFixture {
         for (int i = 0; i < days; i++) {
             printStream.println("-------- day " + i + " --------");
             printStream.println("name, sellIn, quality");
-            for (Item item : items) {
+            for (AbstractItem item : items) {
                 printStream.println(item);
             }
             printStream.println();

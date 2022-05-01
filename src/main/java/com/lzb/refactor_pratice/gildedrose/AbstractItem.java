@@ -1,34 +1,60 @@
 package com.lzb.refactor_pratice.gildedrose;
 
-import lombok.AllArgsConstructor;
-
-/**
- * 抽象商品<br/>
- * Created on : 2022-04-10 21:59
- *
- * @author lizebin
- */
-@AllArgsConstructor
 public abstract class AbstractItem {
 
-    public final int sellIn;
+    public String name;
 
-    public final int quality;
+    public int sellIn;
+
+    public int quality;
+
+    public AbstractItem(String name, int sellIn, int quality) {
+        this.name = name;
+        this.sellIn = sellIn;
+        this.quality = quality;
+    }
+
+    protected boolean isAgedBrie() {
+        return false;
+    }
+
+    protected boolean isSulfuras() {
+        return false;
+    }
+
+    protected boolean isBackstagePasses() { return false; }
 
     @Override
     public String toString() {
-        return this.getName() + ", " + this.sellIn + ", " + this.quality;
+        return this.name + ", " + this.sellIn + ", " + this.quality;
     }
 
     /**
-     * 更新价值
+     * 过了一天
      */
-    public abstract void updateQuality();
+    public void passOneDay() {
+        updateQuality();
+        decreaseSellInDays();
+        if (isExpired()) {
+            updateQualityAfterExpiration();
+        }
+    }
 
-    /**
-     * 获取姓名
-     * @return
-     */
-    public abstract String getName();
+    protected abstract void updateQuality();
 
+    protected abstract void updateQualityAfterExpiration();
+
+    protected void decreaseQuality() {
+        if (quality >= 0) {
+            quality = quality - 1;
+        }
+    }
+
+    private boolean isExpired() {
+        return sellIn < 0;
+    }
+
+    protected void decreaseSellInDays() {
+        sellIn = sellIn - 1;
+    }
 }

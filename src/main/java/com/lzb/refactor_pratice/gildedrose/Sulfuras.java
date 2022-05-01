@@ -6,12 +6,12 @@ package com.lzb.refactor_pratice.gildedrose;
  *
  * @author lizebin
  */
-public class Sulfuras extends Item {
+public class Sulfuras extends AbstractItem {
 
-    private static final String SULFURAS_NAME = "Sulfuras";
+    private static final String SULFURAS_NAME = "Sulfuras, Hand of Ragnaros";
 
-    public Sulfuras(String name, int sell_in, int quality) {
-        super(name, sell_in, quality);
+    public Sulfuras(int sellIn, int quality) {
+        super(SULFURAS_NAME, sellIn, quality);
     }
 
     @Override
@@ -20,8 +20,12 @@ public class Sulfuras extends Item {
     }
 
     @Override
-    public void updateSellInDays() {}
+    public void decreaseSellInDays() {}
 
     @Override
     public void updateQualityAfterExpiration() {}
+
+    @Override
+    public void updateQuality() {
+    }
 }

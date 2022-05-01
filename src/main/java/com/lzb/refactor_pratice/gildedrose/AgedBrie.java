@@ -6,7 +6,7 @@ package com.lzb.refactor_pratice.gildedrose;
  *
  * @author lizebin
  */
-public class AgedBrie extends Item {
+public class AgedBrie extends AbstractItem {
 
     private static final String AGED_BRIE_NAME = "Aged Brie";
 
@@ -20,9 +20,15 @@ public class AgedBrie extends Item {
     }
 
     @Override
-    protected void updateQualityAfterExpiration() {
-        if (quality < 50) {
-            quality = quality + 1;
+    public void updateQualityAfterExpiration() {
+        updateQuality();
+    }
+
+    @Override
+    public void updateQuality() {
+        if (quality >= 50) {
+            return;
         }
+        quality = quality + 1;
     }
 }
