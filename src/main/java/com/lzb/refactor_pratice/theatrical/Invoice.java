@@ -12,4 +12,11 @@ public class Invoice {
         this.performances = performances;
     }
 
+    int getVolumeCredits() {
+        return performances.stream().mapToInt(Performance::getCredits).sum();
+    }
+
+    int getTotalAmount() {
+        return performances.stream().mapToInt(Performance::getAmount).sum();
+    }
 }
