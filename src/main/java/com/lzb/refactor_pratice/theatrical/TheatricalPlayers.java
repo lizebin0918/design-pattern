@@ -12,7 +12,7 @@ public class TheatricalPlayers {
         var totalAmount = invoice.performances.stream().mapToInt(Performance::getAmount).sum();
         var volumeCredits = invoice.performances.stream().mapToInt(Performance::getCredits).sum();
 
-        return invoice.format(format, totalAmount, volumeCredits);
+        return InvoiceFormatter.format(format, invoice.customer, totalAmount, volumeCredits);
     }
 
 }
