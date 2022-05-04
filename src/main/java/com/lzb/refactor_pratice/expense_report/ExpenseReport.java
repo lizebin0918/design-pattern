@@ -1,10 +1,13 @@
 package com.lzb.refactor_pratice.expense_report;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 import java.util.Date;
 import java.util.List;
 
+@Getter
+@AllArgsConstructor
 enum ExpenseType {
 
     DINNER("Dinner", true, 5000),
@@ -14,29 +17,25 @@ enum ExpenseType {
     private final boolean isMeal;
     private final int limit;
 
-    ExpenseType(String name, boolean isMeal, int limit) {
-        this.name = name;
-        this.isMeal = isMeal;
-        this.limit = limit;
-    }
-
-    String getName() {
-        return name;
-    }
-
-    boolean isOverLimit(Expense expense) {
-        return expense.amount > limit;
-    }
-
-    boolean isMeal() {
-        return isMeal;
-    }
 }
 
+@Getter
 @AllArgsConstructor
 class Expense {
     ExpenseType type;
     int amount;
+
+    boolean isOverLimit() {
+        return amount > type.getLimit();
+    }
+
+    String getName() {
+        return type.getName();
+    }
+
+    boolean isMeal() {
+        return type.isMeal();
+    }
 
 }
 
@@ -48,17 +47,17 @@ public class ExpenseReport {
         System.out.println("Expenses " + date);
 
         for (Expense expense : expenses) {
-            if (expense.type.isMeal()) {
+            if (expense.isMeal()) {
                 mealExpenses += expense.amount;
             }
 
             String expenseName = expense.type.getName();
 
-            String mealOverExpensesMarker = expense.type.isOverLimit(expense) ? "X" : " ";
+            String mealOverExpensesMarker = expense.isOverLimit() ? "X" : " ";
 
-            System.out.println(expenseName + "\t" + expense.amount + "\t" + mealOverExpensesMarker);
+            System.out.println(expenseName + "\t" + expense.getAmount() + "\t" + mealOverExpensesMarker);
 
-            total += expense.amount;
+            total += expense.getAmount();
         }
 
         System.out.println("Meal expenses: " + mealExpenses);
