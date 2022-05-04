@@ -2,6 +2,7 @@ package com.lzb.refactor_pratice.theatrical;
 
 public class Performance {
 
+    public static final int AUDIENCE_BASE = 30;
     public Play play;
     /**
      * 观众人数
@@ -14,7 +15,7 @@ public class Performance {
     }
 
     int getCredits() {
-        var thisCredits = Math.max(audience - 30, 0);
+        var thisCredits = Math.max(audience - AUDIENCE_BASE, 0);
         if (isComedy()) thisCredits += Math.floor((double) audience / 5);
         return thisCredits;
     }
@@ -24,6 +25,6 @@ public class Performance {
     }
 
     int getAmount() {
-        return 40000 + 1000 * Math.max(audience - 30, 0);
+        return 40000 + 1000 * Math.max(audience - AUDIENCE_BASE, 0);
     }
 }
