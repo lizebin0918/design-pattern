@@ -6,13 +6,38 @@ import java.util.Date;
 import java.util.List;
 
 enum ExpenseType {
-    DINNER, BREAKFAST, CAR_RENTAL
+
+    DINNER("Dinner", true, 5000),
+    BREAKFAST("Breakfast", true, 1000),
+    CAR_RENTAL("Car Rental", false, Integer.MAX_VALUE);
+    private final String name;
+    private final boolean isMeal;
+    private final int limit;
+
+    ExpenseType(String name, boolean isMeal, int limit) {
+        this.name = name;
+        this.isMeal = isMeal;
+        this.limit = limit;
+    }
+
+    String getName() {
+        return name;
+    }
+
+    boolean isOverLimit(Expense expense) {
+        return expense.amount > limit;
+    }
+
+    boolean isMeal() {
+        return isMeal;
+    }
 }
 
 @AllArgsConstructor
 class Expense {
     ExpenseType type;
     int amount;
+
 }
 
 public class ExpenseReport {
@@ -23,24 +48,13 @@ public class ExpenseReport {
         System.out.println("Expenses " + date);
 
         for (Expense expense : expenses) {
-            if (expense.type == ExpenseType.DINNER || expense.type == ExpenseType.BREAKFAST) {
+            if (expense.type.isMeal()) {
                 mealExpenses += expense.amount;
             }
 
-            String expenseName = "";
-            switch (expense.type) {
-                case DINNER:
-                    expenseName = "Dinner";
-                    break;
-                case BREAKFAST:
-                    expenseName = "Breakfast";
-                    break;
-                case CAR_RENTAL:
-                    expenseName = "Car Rental";
-                    break;
-            }
+            String expenseName = expense.type.getName();
 
-            String mealOverExpensesMarker = expense.type == ExpenseType.DINNER && expense.amount > 5000 || expense.type == ExpenseType.BREAKFAST && expense.amount > 1000 ? "X" : " ";
+            String mealOverExpensesMarker = expense.type.isOverLimit(expense) ? "X" : " ";
 
             System.out.println(expenseName + "\t" + expense.amount + "\t" + mealOverExpensesMarker);
 
