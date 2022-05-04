@@ -25,7 +25,7 @@ public class ExpenseReportTest {
         ByteArrayOutputStream output = new ApprovalUtilities().writeSystemOutToStringBuffer();
 
         ExpenseReport report = new ExpenseReport();
-        report.printReport(Collections.emptyList(), new Date(0));
+        report.printReport(new Expenses(Collections.emptyList()), new Date(0));
 
         Approvals.verify(output);
 
@@ -47,14 +47,14 @@ public class ExpenseReportTest {
         ByteArrayOutputStream output = new ApprovalUtilities().writeSystemOutToStringBuffer();
 
         ExpenseReport report = new ExpenseReport();
-        List<Expense> expenses = List.of(
+        Expenses expenses = new Expenses(List.of(
             new Expense(DINNER, 5000),
             new Expense(DINNER, 5001),
             new Expense(BREAKFAST, 1000),
             new Expense(BREAKFAST, 1001),
             new Expense(CAR_RENTAL, 50),
             new Expense(CAR_RENTAL, Integer.MAX_VALUE)
-        );
+        ));
         report.printReport(expenses, new Date(0));
 
         Approvals.verify(output);

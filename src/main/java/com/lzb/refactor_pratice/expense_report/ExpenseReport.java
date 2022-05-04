@@ -3,8 +3,9 @@ package com.lzb.refactor_pratice.expense_report;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.util.Collection;
 import java.util.Date;
-import java.util.List;
+import java.util.Iterator;
 
 @Getter
 @AllArgsConstructor
@@ -39,13 +40,45 @@ class Expense {
 
 }
 
+class Expenses implements Iterable<Expense> {
+
+    private final Collection<Expense> expenses;
+
+    Expenses(Collection<Expense> expenses) {
+        this.expenses = expenses;
+    }
+
+    @Override
+    public Iterator<Expense> iterator() {
+        return expenses.iterator();
+    }
+
+    public int getTotal() {
+        int total = 0;
+        for (Expense expense : expenses) {
+            total += expense.getAmount();
+        }
+        return total;
+    }
+
+    public int getMealExpenses() {
+        int mealExpenses = 0;
+        for (Expense expense : expenses) {
+            if (expense.isMeal()) {
+                mealExpenses += expense.getAmount();
+            }
+        }
+        return mealExpenses;
+    }
+}
+
 public class ExpenseReport {
-    public void printReport(List<Expense> expenses, Date date) {
+    public void printReport(Expenses expenses, Date date) {
 
         System.out.println("Expenses " + date);
 
-        int mealExpenses = getMealExpenses(expenses);
-        int total = getTotal(expenses);
+        int mealExpenses = expenses.getMealExpenses();
+        int total = expenses.getTotal();
 
         for (Expense expense : expenses) {
             getSingleExpense(expense);
@@ -61,25 +94,7 @@ public class ExpenseReport {
         System.out.println(expenseName + "\t" + expense.getAmount() + "\t" + mealOverExpensesMarker);
     }
 
-    private int getTotal(List<Expense> expenses) {
-        int total = 0;
-        for (Expense expense : expenses) {
-            total += expense.getAmount();
-        }
-        return total;
-    }
-
-    private int getMealExpenses(List<Expense> expenses) {
-        int mealExpenses = 0;
-        for (Expense expense : expenses) {
-            if (expense.isMeal()) {
-                mealExpenses += expense.getAmount();
-            }
-        }
-        return mealExpenses;
-    }
-
-    public void printReport(List<Expense> expenses) {
+    public void printReport(Expenses expenses) {
         printReport(expenses, new Date());
     }
 }
