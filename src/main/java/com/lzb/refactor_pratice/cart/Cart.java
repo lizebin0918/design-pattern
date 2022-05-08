@@ -1,27 +1,25 @@
 package com.lzb.refactor_pratice.cart;
 
+import java.util.Map;
+
 /**
  * 购物车
  * @author lizebin
  */
 public class Cart {
 
-    private final BlackCat blackCat = new BlackCat();
-    private final Hsinchu hsinchu = new Hsinchu();
-    private final PostOffice postOffice = new PostOffice();
+    public static final String BLACK_CAT = "black cat";
+    public static final String HSINCHU = "hsinchu";
+    public static final String POST_OFFICE = "post office";
+
+    private final Map<String, ShippingFee> shippingFees = Map.of(
+        BLACK_CAT, new BlackCat(),
+        HSINCHU, new Hsinchu(),
+        POST_OFFICE, new PostOffice()
+    );
 
     public double shippingFee(String shipper, Product product) {
-        ShippingFee shippingFee;
-        if (shipper.equals("black cat")) {
-            shippingFee = blackCat;
-        } else if (shipper.equals("hsinchu")) {
-            shippingFee = hsinchu;
-        } else if (shipper.equals("post office")) {
-            shippingFee = postOffice;
-        } else {
-            throw new IllegalArgumentException("shipper not exist");
-        }
-        return shippingFee.calculate(product);
+        return shippingFees.get(shipper).calculate(product);
     }
 
 }
