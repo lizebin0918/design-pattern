@@ -1,4 +1,4 @@
-package com.lzb.oop.demo1;
+package com.lzb;
 
 import com.lzb.oop.demo1.monster.MDragoon;
 import com.lzb.oop.demo1.player.Fighter;

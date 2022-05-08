@@ -1,7 +1,7 @@
 package com.lzb.cider.order_query.executor;
 
 import com.lzb.cider.order_query.query.OrderQuery;
-import org.junit.platform.commons.util.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.Set;
 
