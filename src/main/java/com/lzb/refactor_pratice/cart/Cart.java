@@ -11,15 +11,17 @@ public class Cart {
     private final PostOffice postOffice = new PostOffice();
 
     public double shippingFee(String shipper, Product product) {
+        ShippingFee shippingFee;
         if (shipper.equals("black cat")) {
-            return blackCat.calculate(product);
+            shippingFee = blackCat;
         } else if (shipper.equals("hsinchu")) {
-            return hsinchu.calculate(product);
+            shippingFee = hsinchu;
         } else if (shipper.equals("post office")) {
-            return postOffice.calculate(product);
+            shippingFee = postOffice;
         } else {
             throw new IllegalArgumentException("shipper not exist");
         }
+        return shippingFee.calculate(product);
     }
 
 }
