@@ -1,4 +1,4 @@
-package com.lzb.oop;
+package com.lzb;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
