@@ -1,9 +1,11 @@
 package com.lzb.vistor.lzb;
 
+import com.alibaba.fastjson.JSON;
 import lombok.Data;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -23,6 +25,9 @@ public class Main {
         } else {
             System.out.println("不包含蔬菜");
         }
+
+        Product product = order.getOrderItems().get(0).getProduct(productGateway::getById);
+        System.out.println(JSON.toJSONString(product));
     }
 
     @Data
@@ -52,12 +57,27 @@ public class Main {
             this.orderId = orderId;
             this.productId = productId;
         }
+
+        Product getProduct(Function<Long, Product> productProvider) {
+            return productProvider.apply(this.productId);
+        }
     }
 
     private static class ProductGateway {
+
         public boolean hasVegatable(List<OrderItem> items) {
             return items.stream().map(OrderItem::getProductId).collect(Collectors.toList()).contains(1L);
         }
+
+        public Product getById(long productId) {
+            return new Product();
+        }
+    }
+
+    @Data
+    private static class Product {
+        private long id;
+        private String name;
     }
 
 }
