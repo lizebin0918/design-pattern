@@ -54,15 +54,19 @@ public class GildedRose1 {
                 continue;
             }
 
-            if (!items[i].name.equals(BACKSTAGE)) {
-                if (items[i].quality > 0) {
-                    if (!items[i].name.equals(SULFURAS)) {
-                        items[i].quality = items[i].quality - 1;
-                    }
-                }
-            } else {
-                items[i].quality = items[i].quality - items[i].quality;
+            if (items[i].name.equals(BACKSTAGE)) {
+                items[i].quality = 0;
+                continue;
             }
+
+            if (items[i].name.equals(SULFURAS)) {
+                continue;
+            }
+
+            if (items[i].quality <= 0) {
+                continue;
+            }
+            items[i].quality = items[i].quality - 1;
         }
     }
 }
