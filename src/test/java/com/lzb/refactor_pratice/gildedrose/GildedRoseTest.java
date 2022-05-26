@@ -1,10 +1,9 @@
 package com.lzb.refactor_pratice.gildedrose;
 
-import org.junit.Test;
 
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GildedRoseTest {
 
@@ -14,8 +13,8 @@ public class GildedRoseTest {
         GildedRose app = new GildedRose(items);
         app.passOneDay();
         assertEquals("foo", app.items[0].name);
-        assertThat(app.items[0].quality, is(4));
-        assertThat(app.items[0].sellIn, is(0));
+        assertEquals(4, app.items[0].quality);
+        assertEquals(0, app.items[0].sellIn);
     }
 
 }

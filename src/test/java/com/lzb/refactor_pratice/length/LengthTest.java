@@ -1,9 +1,9 @@
+/*
 package com.lzb.refactor_pratice.length;
 
-import org.junit.Test;
 
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+import org.junit.jupiter.api.Test;
+
 
 public class LengthTest {
 
@@ -11,24 +11,24 @@ public class LengthTest {
     public void should_1_inch_equals_1_inch() {
         Length result = new Length(1, Unit.INCH).as(Unit.INCH);
 
-        assertThat(result.getValue(), is(1.0));
-        assertThat(result.getUnit(), is(Unit.INCH));
+        assertThat(1.0, result.getValue());
+        assertThat(Unit.INCH, result.getUnit());
     }
 
     @Test
     public void should_2_feet_equals_2_feet() {
         Length result = new Length(2, Unit.FOOT).as(Unit.FOOT);
 
-        assertThat(result.getValue(), is(2.0));
-        assertThat(result.getUnit(), is(Unit.FOOT));
+        assertThat(2.0, result.getValue());
+        assertThat(Unit.FOOT, result.getUnit());
     }
 
     @Test
     public void should_1_yard_equals_1_yard() {
         Length result = new Length(1, Unit.YARD).as(Unit.YARD);
 
-        assertThat(result.getValue(), is(1.0));
-        assertThat(result.getUnit(), is(Unit.YARD));
+        assertThat(1.0, result.getValue());
+        assertThat(Unit.YARD, result.getUnit());
     }
 
     @Test
@@ -95,4 +95,4 @@ public class LengthTest {
         assertThat(result.getUnit(), is(Unit.YARD));
     }
 
-}
+}*/

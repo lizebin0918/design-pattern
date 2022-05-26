@@ -1,6 +1,7 @@
 package com.lzb.refactor_pratice.bug_zero;
 
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -9,8 +10,8 @@ import java.nio.file.Paths;
 import java.util.Random;
 import java.util.stream.IntStream;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class GameTest {
 

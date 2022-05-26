@@ -2,7 +2,7 @@ package com.lzb.refactor_pratice.theatrical;
 
 import org.approvaltests.reporters.JunitReporter;
 import org.approvaltests.reporters.UseReporter;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 

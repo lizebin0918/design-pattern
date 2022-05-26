@@ -2,8 +2,8 @@ package com.lzb.refactor_pratice.expense_report;
 
 import org.approvaltests.ApprovalUtilities;
 import org.approvaltests.Approvals;
-import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.util.Collections;
