@@ -95,7 +95,7 @@ public class TextTestFixture1 {
                 printStream.println(item);
             }
             printStream.println();
-            app.update_quality();
+            app.passOneDay();
         }
 
         String baseLine = baos.toString();
