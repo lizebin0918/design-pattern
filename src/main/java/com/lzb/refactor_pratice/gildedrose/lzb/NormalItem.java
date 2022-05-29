@@ -8,7 +8,19 @@ package com.lzb.refactor_pratice.gildedrose.lzb;
  */
 public class NormalItem extends Item1 {
 
-    public NormalItem(String name, int sellIn, int quality) {
+    private NormalItem(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
+    }
+
+    public static NormalItem createNormalItem(String name, int sellIn, int quality) {
+        return new NormalItem(name, sellIn, quality);
+    }
+
+    @Override
+    protected void updateQuality() {
+        if (quality <= 0) {
+            return;
+        }
+        quality = quality - 1;
     }
 }

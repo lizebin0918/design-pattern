@@ -27,7 +27,7 @@ public class Item1 {
     }
 
     public static Item1 createNormal(String name, int sellIn, int quality) {
-        return new Item1(name, sellIn, quality);
+        return NormalItem.createNormalItem(name, sellIn, quality);
     }
 
 
@@ -57,13 +57,6 @@ public class Item1 {
     }
 
     protected void updateQuality() {
-        if (!(isAgedBrie() || isBackStage())) {
-            if (quality > 0) {
-                if (!isSulfuras()) {
-                    quality = quality - 1;
-                }
-            }
-        }
     }
 
     protected void updateQualityInExpired() {
