@@ -1,6 +1,6 @@
 package com.lzb.refactor_pratice.gildedrose.lzb;
 
-public class Item1 {
+public abstract class Item1 {
 
     public String name;
 
@@ -56,8 +56,7 @@ public class Item1 {
         }
     }
 
-    protected void updateQuality() {
-    }
+    protected abstract void updateQuality();
 
     protected void updateQualityInExpired() {
         if (quality <= 0) {
