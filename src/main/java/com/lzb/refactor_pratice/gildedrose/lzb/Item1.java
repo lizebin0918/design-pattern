@@ -49,36 +49,20 @@ public class Item1 {
     }
 
     void passOneDay() {
-        if (!isAgedBrie()
-            && !isBackStage()) {
+        updateQuality();
+        decrementSellInDay();
+        if (isSellInExpired()) {
+            updateQualityInExpired();
+        }
+    }
+
+    protected void updateQuality() {
+        if (!(isAgedBrie() || isBackStage())) {
             if (quality > 0) {
                 if (!isSulfuras()) {
                     quality = quality - 1;
                 }
             }
-        } else {
-            if (quality < 50) {
-                quality = quality + 1;
-
-                if (isBackStage()) {
-                    if (sellIn < 11) {
-                        if (quality < 50) {
-                            quality = quality + 1;
-                        }
-                    }
-
-                    if (sellIn < 6) {
-                        if (quality < 50) {
-                            quality = quality + 1;
-                        }
-                    }
-                }
-            }
-        }
-
-        decrementSellInDay();
-        if (isSellInExpired()) {
-            updateQualityInExpired();
         }
     }
 
