@@ -22,4 +22,9 @@ public class Sulfuras extends Item1 {
     boolean isSulfuras() {
         return true;
     }
+
+    @Override
+    protected void decrementSellInDay() {
+
+    }
 }

@@ -76,11 +76,9 @@ public class Item1 {
             }
         }
 
-        if (!isSulfuras()) {
-            sellIn = sellIn - 1;
-        }
+        decrementSellInDay();
 
-        if (sellIn >= 0) {
+        if (isInsell()) {
             return;
         }
 
@@ -104,5 +102,13 @@ public class Item1 {
             return;
         }
         quality = quality - 1;
+    }
+
+    protected void decrementSellInDay() {
+        sellIn = sellIn - 1;
+    }
+
+    private boolean isInsell() {
+        return sellIn >= 0;
     }
 }
