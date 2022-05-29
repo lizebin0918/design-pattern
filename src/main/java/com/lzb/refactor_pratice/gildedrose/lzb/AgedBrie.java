@@ -22,4 +22,11 @@ public class AgedBrie extends Item1 {
     public static AgedBrie createAgedBrie(int sellIn, int quality) {
         return new AgedBrie(NAME, sellIn, quality);
     }
+
+    @Override
+    protected void updateQualityInExpired() {
+        if (quality < 50) {
+            quality = quality + 1;
+        }
+    }
 }

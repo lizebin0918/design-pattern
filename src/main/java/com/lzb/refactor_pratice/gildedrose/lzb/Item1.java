@@ -77,27 +77,12 @@ public class Item1 {
         }
 
         decrementSellInDay();
-
-        if (isInsell()) {
-            return;
+        if (isSellInExpired()) {
+            updateQualityInExpired();
         }
+    }
 
-        if (isAgedBrie()) {
-            if (quality < 50) {
-                quality = quality + 1;
-            }
-            return;
-        }
-
-        if (isBackStage()) {
-            quality = 0;
-            return;
-        }
-
-        if (isSulfuras()) {
-            return;
-        }
-
+    protected void updateQualityInExpired() {
         if (quality <= 0) {
             return;
         }
@@ -108,7 +93,7 @@ public class Item1 {
         sellIn = sellIn - 1;
     }
 
-    private boolean isInsell() {
-        return sellIn >= 0;
+    private boolean isSellInExpired() {
+        return sellIn < 0;
     }
 }

@@ -22,4 +22,9 @@ public class BackStage extends Item1 {
     boolean isBackStage() {
         return true;
     }
+
+    @Override
+    protected void updateQualityInExpired() {
+        quality = 0;
+    }
 }

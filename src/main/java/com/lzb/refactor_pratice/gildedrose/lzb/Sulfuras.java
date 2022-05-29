@@ -27,4 +27,8 @@ public class Sulfuras extends Item1 {
     protected void decrementSellInDay() {
 
     }
+
+    @Override
+    protected void updateQualityInExpired() {
+    }
 }
