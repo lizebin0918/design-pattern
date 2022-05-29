@@ -8,7 +8,7 @@ package com.lzb.refactor_pratice.gildedrose.lzb;
  */
 public class AgedBrie extends Item1 {
 
-    public static final String AGED_BRIE = "Aged Brie";
+    public static final String NAME = "Aged Brie";
 
     private AgedBrie(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
@@ -20,6 +20,6 @@ public class AgedBrie extends Item1 {
     }
 
     public static AgedBrie createAgedBrie(int sellIn, int quality) {
-        return new AgedBrie(AGED_BRIE, sellIn, quality);
+        return new AgedBrie(NAME, sellIn, quality);
     }
 }

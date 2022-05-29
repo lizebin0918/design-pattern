@@ -20,14 +20,14 @@ public class Item1 {
     }
 
     boolean isSulfuras() {
-        return name.equals(GildedRose1.SULFURAS);
+        return name.equals(Sulfuras.NAME);
     }
 
     boolean isAgedBrie() {
-        return name.equals(GildedRose1.AGED_BRIE);
+        return name.equals(AgedBrie.NAME);
     }
 
     boolean isBackStage() {
-        return name.equals(GildedRose1.BACKSTAGE);
+        return name.equals(BackStage.NAME);
     }
 }

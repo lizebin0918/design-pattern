@@ -8,10 +8,10 @@ package com.lzb.refactor_pratice.gildedrose.lzb;
  */
 public class Sulfuras extends Item1 {
 
-    public static final String SULFURAS = "Sulfuras, Hand of Ragnaros";
+    public static final String NAME = "Sulfuras, Hand of Ragnaros";
 
     private Sulfuras(int sellIn, int quality) {
-        super(SULFURAS, sellIn, quality);
+        super(NAME, sellIn, quality);
     }
 
     public static Sulfuras createSulfuras(int sellIn, int quality) {
