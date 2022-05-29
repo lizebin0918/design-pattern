@@ -8,11 +8,28 @@ public class Item1 {
 
     public int quality;
 
-    public Item1(String name, int sellIn, int quality) {
+    protected Item1(String name, int sellIn, int quality) {
         this.name = name;
         this.sellIn = sellIn;
         this.quality = quality;
     }
+
+    public static AgedBrie createAgedBrie(int sellIn, int quality) {
+        return AgedBrie.createAgedBrie(sellIn, quality);
+    }
+
+    public static BackStage createBackStage(int sellIn, int quality) {
+        return BackStage.createBackStage(sellIn, quality);
+    }
+
+    public static Sulfuras createSulfuras(int sellIn, int quality) {
+        return Sulfuras.createSulfuras(sellIn, quality);
+    }
+
+    public static Item1 createNormal(String name, int sellIn, int quality) {
+        return new Item1(name, sellIn, quality);
+    }
+
 
     @Override
     public String toString() {
@@ -20,14 +37,14 @@ public class Item1 {
     }
 
     boolean isSulfuras() {
-        return name.equals(Sulfuras.NAME);
+        return false;
     }
 
     boolean isAgedBrie() {
-        return name.equals(AgedBrie.NAME);
+        return false;
     }
 
     boolean isBackStage() {
-        return name.equals(BackStage.NAME);
+        return false;
     }
 }
