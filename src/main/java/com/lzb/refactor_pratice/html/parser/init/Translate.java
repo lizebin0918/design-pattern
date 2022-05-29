@@ -9,7 +9,7 @@ package com.lzb.refactor_pratice.html.parser.init;
 public class Translate {
 
     public static String decode(String str) {
-        return str;
+        return str + " translate";
     }
 
 }
