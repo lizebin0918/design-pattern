@@ -1,5 +1,11 @@
 package com.lzb.refactor_pratice.gildedrose.lzb;
 
+/**
+ * 1.新建子类，逻辑下推？
+ * 2.for循环的continue，如果去掉？
+ * 因为都是对item操作，相当于是item对象的行为，这样就可以在item内部直接return了
+ *
+ */
 public class GildedRose1 {
     Item1[] items;
 
@@ -9,61 +15,7 @@ public class GildedRose1 {
 
     public void passOneDay() {
         for (Item1 item : items) {
-            if (!item.isAgedBrie()
-                && !item.isBackStage()) {
-                if (item.quality > 0) {
-                    if (!item.isSulfuras()) {
-                        item.quality = item.quality - 1;
-                    }
-                }
-            } else {
-                if (item.quality < 50) {
-                    item.quality = item.quality + 1;
-
-                    if (item.isBackStage()) {
-                        if (item.sellIn < 11) {
-                            if (item.quality < 50) {
-                                item.quality = item.quality + 1;
-                            }
-                        }
-
-                        if (item.sellIn < 6) {
-                            if (item.quality < 50) {
-                                item.quality = item.quality + 1;
-                            }
-                        }
-                    }
-                }
-            }
-
-            if (!item.isSulfuras()) {
-                item.sellIn = item.sellIn - 1;
-            }
-
-            if (item.sellIn >= 0) {
-                continue;
-            }
-
-            if (item.isAgedBrie()) {
-                if (item.quality < 50) {
-                    item.quality = item.quality + 1;
-                }
-                continue;
-            }
-
-            if (item.isBackStage()) {
-                item.quality = 0;
-                continue;
-            }
-
-            if (item.isSulfuras()) {
-                continue;
-            }
-
-            if (item.quality <= 0) {
-                continue;
-            }
-            item.quality = item.quality - 1;
+            item.passOneDay();
         }
     }
 

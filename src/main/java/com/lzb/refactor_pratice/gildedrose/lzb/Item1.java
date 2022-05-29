@@ -47,4 +47,62 @@ public class Item1 {
     boolean isBackStage() {
         return false;
     }
+
+    void passOneDay() {
+        if (!isAgedBrie()
+            && !isBackStage()) {
+            if (quality > 0) {
+                if (!isSulfuras()) {
+                    quality = quality - 1;
+                }
+            }
+        } else {
+            if (quality < 50) {
+                quality = quality + 1;
+
+                if (isBackStage()) {
+                    if (sellIn < 11) {
+                        if (quality < 50) {
+                            quality = quality + 1;
+                        }
+                    }
+
+                    if (sellIn < 6) {
+                        if (quality < 50) {
+                            quality = quality + 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        if (!isSulfuras()) {
+            sellIn = sellIn - 1;
+        }
+
+        if (sellIn >= 0) {
+            return;
+        }
+
+        if (isAgedBrie()) {
+            if (quality < 50) {
+                quality = quality + 1;
+            }
+            return;
+        }
+
+        if (isBackStage()) {
+            quality = 0;
+            return;
+        }
+
+        if (isSulfuras()) {
+            return;
+        }
+
+        if (quality <= 0) {
+            return;
+        }
+        quality = quality - 1;
+    }
 }
