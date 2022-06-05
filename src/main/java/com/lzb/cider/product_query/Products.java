@@ -28,7 +28,9 @@ public class Products {
      * @return
      */
     public List<Product> listBy(Color color) {
-        return products.stream().filter(isColor(color)).collect(Collectors.toUnmodifiableList());
+        //return products.stream().filter(isColor(color)).collect(Collectors.toUnmodifiableList());
+        ColorFilter colorFilter = new ColorFilter(color);
+        return products.stream().filter(colorFilter::isSatisfiedBy).collect(Collectors.toUnmodifiableList());
     }
 
     /**
