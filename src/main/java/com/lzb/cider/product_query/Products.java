@@ -3,7 +3,6 @@ package com.lzb.cider.product_query;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.function.Function;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import static com.lzb.cider.product_query.Product.*;
@@ -50,7 +49,7 @@ public class Products {
      * @param priceRange
      * @return
      */
-    public List<Product> listByColorAndPrice(Color color, Range priceRange) {
+    public List<Product> listBy(Color color, Range priceRange) {
         return products.stream()
                 .filter(isColor(color))
                 .filter(isBetweenPrice(priceRange))

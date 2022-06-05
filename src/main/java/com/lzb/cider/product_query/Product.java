@@ -29,6 +29,12 @@ public class Product {
      */
     private BigDecimal weight;
 
+    public Product(Color color, BigDecimal price, BigDecimal weight) {
+        this.color = color;
+        this.price = price;
+        this.weight = weight;
+    }
+
     public static Predicate<Product> isColor(Color color) {
         return item -> item.color == color;
     }
