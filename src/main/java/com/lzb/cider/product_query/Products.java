@@ -70,4 +70,20 @@ public class Products {
                 .filter(isBetweenWeight(weightRange).or(isBetweenPrice(priceRange)))
                 .collect(Collectors.toUnmodifiableList());
     }
+
+    /**
+     * isColor = ? and price between ? and ? and weight between ? and ?
+     *
+     * @param color
+     * @param priceRange
+     * @param weightRange
+     * @return
+     */
+    public List<Product> listByColorAndPriceAndWeight(Color color, Range priceRange, Range weightRange) {
+        return products.stream()
+            .filter(isColor(color))
+            .filter(isBetweenWeight(weightRange))
+            .filter(isBetweenPrice(priceRange))
+            .collect(Collectors.toUnmodifiableList());
+    }
 }

@@ -32,17 +32,43 @@ class ProductsTest {
     @Test
     void listByColor() {
         assertEquals(3, products.listBy(Color.ORANGE).size());
+        assertEquals(2, products.listBy(Color.RED).size());
+        assertEquals(3, products.listBy(Color.YELLOW).size());
+        assertEquals(2, products.listBy(Color.BLUE).size());
     }
 
     @Test
-    void testListBy() {
+    void testListByMapper() {
+        assertEquals(3, products.listBy(Product::getPrice, new Range(new BigDecimal(3), new BigDecimal(5))).size());
+        assertEquals(2, products.listBy(Product::getPrice, new Range(new BigDecimal(12), new BigDecimal(12))).size());
+        assertEquals(2, products.listBy(Product::getPrice, new Range(new BigDecimal(13), new BigDecimal(20))).size());
     }
 
     @Test
-    void testListBy1() {
+    void testListByColorAndPrice() {
+        Range priceRange = new Range(new BigDecimal(3), new BigDecimal(5));
+        assertEquals(1, products.listBy(Color.ORANGE, priceRange).size());
+        assertEquals(1, products.listBy(Color.BLUE, priceRange).size());
+        assertEquals(1, products.listBy(Color.RED, priceRange).size());
     }
 
     @Test
     void listByColorAndPriceOrWeight() {
+        Range priceRange = new Range(new BigDecimal(3), new BigDecimal(12));
+        Range weightRange = new Range(new BigDecimal(3), new BigDecimal(12));
+        assertEquals(2, products.listByColorAndPriceOrWeight(Color.RED, priceRange, weightRange).size());
+        priceRange = new Range(new BigDecimal(1), new BigDecimal(1));
+        weightRange = new Range(new BigDecimal(3), new BigDecimal(12));
+        assertEquals(1, products.listByColorAndPriceOrWeight(Color.RED, priceRange, weightRange).size());
+    }
+
+    @Test
+    void listByColorAndPriceAndWeight() {
+        Range priceRange = new Range(new BigDecimal(3), new BigDecimal(12));
+        Range weightRange = new Range(new BigDecimal(3), new BigDecimal(12));
+        assertEquals(1, products.listByColorAndPriceAndWeight(Color.RED, priceRange, weightRange).size());
+        priceRange = new Range(new BigDecimal(1), new BigDecimal(1));
+        weightRange = new Range(new BigDecimal(3), new BigDecimal(12));
+        assertEquals(0, products.listByColorAndPriceAndWeight(Color.RED, priceRange, weightRange).size());
     }
 }
