@@ -1,5 +1,6 @@
 package com.lzb.cider.product_query;
 
+import com.lzb.cider.product_query.specification.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -70,5 +71,9 @@ class ProductsTest {
         priceRange = new Range(new BigDecimal(1), new BigDecimal(1));
         weightRange = new Range(new BigDecimal(3), new BigDecimal(12));
         assertEquals(0, products.listByColorAndPriceAndWeight(Color.RED, priceRange, weightRange).size());
+    }
+
+    void listBy() {
+        ISpecification<Product> w1 = new AndSpecification<>(new ExpressionSpecification<>(Product::getColor), new ExpressionSpecification<>());
     }
 }

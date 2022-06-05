@@ -1,6 +1,7 @@
 package com.lzb.cider.product_query;
 
 import com.lzb.cider.product_query.filter.*;
+import com.lzb.cider.product_query.specification.ISpecification;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -95,5 +96,9 @@ public class Products {
             .filter(isBetweenWeight(weightRange))
             .filter(isBetweenPrice(priceRange))
             .collect(Collectors.toUnmodifiableList());
+    }
+
+    public List<Product> listBy(ISpecification<Product> where) {
+        return products.stream().filter(where::isSatisfiedBy).collect(Collectors.toUnmodifiableList());
     }
 }
