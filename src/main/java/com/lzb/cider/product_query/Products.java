@@ -52,10 +52,16 @@ public class Products {
      * @return
      */
     public List<Product> listBy(Color color, Range priceRange) {
+        ColorFilter colorFilter = new ColorFilter(color);
+        PriceRangeFilter priceRangeFilter = new PriceRangeFilter(priceRange);
+        AndFilter andFilter = new AndFilter(colorFilter, priceRangeFilter);
+        /*return products.stream()
+                .filter(colorFilter::isSatisfiedBy)
+                .filter(priceRangeFilter::isSatisfiedBy)
+                .collect(Collectors.toUnmodifiableList());*/
         return products.stream()
-                .filter(isColor(color))
-                .filter(isBetweenPrice(priceRange))
-                .collect(Collectors.toUnmodifiableList());
+            .filter(andFilter::isSatisfiedBy)
+            .collect(Collectors.toUnmodifiableList());
     }
 
     /**
