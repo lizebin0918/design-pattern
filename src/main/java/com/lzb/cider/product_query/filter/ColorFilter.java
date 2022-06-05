@@ -1,5 +1,7 @@
-package com.lzb.cider.product_query;
+package com.lzb.cider.product_query.filter;
 
+import com.lzb.cider.product_query.Color;
+import com.lzb.cider.product_query.Product;
 import lombok.Getter;
 
 /**
