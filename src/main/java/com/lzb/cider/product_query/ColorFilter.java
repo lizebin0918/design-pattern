@@ -9,7 +9,7 @@ import lombok.Getter;
  * @author lizebin
  */
 @Getter
-public class ColorFilter {
+public class ColorFilter extends Filter {
 
     private Color color;
 
@@ -17,7 +17,7 @@ public class ColorFilter {
         this.color = color;
     }
 
-    boolean isSatisfiedBy(Product product) {
+    public boolean isSatisfiedBy(Product product) {
         return product.getColor() == getColor();
     }
 }
