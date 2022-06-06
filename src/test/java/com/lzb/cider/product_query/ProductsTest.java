@@ -73,7 +73,12 @@ class ProductsTest {
         assertEquals(0, products.listByColorAndPriceAndWeight(Color.RED, priceRange, weightRange).size());
     }
 
+    @Test
     void listBy() {
-        ISpecification<Product> w1 = new AndSpecification<>(new ExpressionSpecification<>(Product::getColor), new ExpressionSpecification<>());
+        ISpecification<Product> w1 = new ExpressionSpecification<>(Product.isColor(Color.RED));
+        assertEquals(2, products.listBy(w1).size());
+        ISpecification<Product> w2 = w1.and(
+            new ExpressionSpecification<>(Product.isBetweenPrice(new Range(new BigDecimal(2), new BigDecimal(3)))));
+        assertEquals(1, products.listBy(w2).size());
     }
 }

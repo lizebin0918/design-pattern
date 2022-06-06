@@ -1,6 +1,6 @@
 package com.lzb.cider.product_query.specification;
 
-import java.util.function.Function;
+import java.util.function.Predicate;
 
 /**
  * <br/>
@@ -10,14 +10,14 @@ import java.util.function.Function;
  */
 public class ExpressionSpecification<T> extends CompositeSpecification<T> {
 
-    private Function<T, Boolean> expression;
+    private Predicate<T> expression;
 
-    public ExpressionSpecification(Function<T, Boolean> expression) {
+    public ExpressionSpecification(Predicate<T> expression) {
         this.expression = expression;
     }
 
     @Override
     public boolean isSatisfiedBy(T o) {
-        return expression.apply(o);
+        return expression.test(o);
     }
 }
