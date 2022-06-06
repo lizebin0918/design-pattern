@@ -10,10 +10,14 @@ import java.util.Map;
 
 public class CoffeeMachine {
 
-    private static List<Drink> drinkList = new ArrayList<Drink>();
-    private static List<Ingredient> ingredientList = new ArrayList<Ingredient>();
+    protected static List<Drink> drinkList = new ArrayList<Drink>();
+    protected static List<Ingredient> ingredientList = new ArrayList<Ingredient>();
 
     public static void main(String[] args) {
+        run();
+    }
+
+    public static void run() {
         addAllIngredients();
         addAllDrinks();
         updateCosts();
