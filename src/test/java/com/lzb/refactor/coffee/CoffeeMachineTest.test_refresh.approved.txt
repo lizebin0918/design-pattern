@@ -1,0 +1,309 @@
+Inventory:
+Cocoa,10
+Cocoa,10
+Cocoa,10
+Cocoa,10
+Cocoa,10
+Cocoa,10
+Cocoa,10
+Cocoa,10
+Cocoa,10
+Cocoa,10
+Coffee,10
+Coffee,10
+Coffee,10
+Coffee,10
+Coffee,10
+Coffee,10
+Coffee,10
+Coffee,10
+Coffee,10
+Coffee,10
+Cream,10
+Cream,10
+Cream,10
+Cream,10
+Cream,10
+Cream,10
+Cream,10
+Cream,10
+Cream,10
+Cream,10
+Decaf Coffee,10
+Decaf Coffee,10
+Decaf Coffee,10
+Decaf Coffee,10
+Decaf Coffee,10
+Decaf Coffee,10
+Decaf Coffee,10
+Decaf Coffee,10
+Decaf Coffee,10
+Decaf Coffee,10
+Espresso,1
+Espresso,4
+Espresso,7
+Espresso,10
+Espresso,10
+Espresso,10
+Espresso,10
+Espresso,10
+Espresso,10
+Espresso,10
+Foamed Milk,10
+Foamed Milk,10
+Foamed Milk,10
+Foamed Milk,10
+Foamed Milk,10
+Foamed Milk,10
+Foamed Milk,10
+Foamed Milk,10
+Foamed Milk,10
+Foamed Milk,10
+Steamed Milk,10
+Steamed Milk,10
+Steamed Milk,10
+Steamed Milk,10
+Steamed Milk,10
+Steamed Milk,10
+Steamed Milk,10
+Steamed Milk,10
+Steamed Milk,10
+Steamed Milk,10
+Sugar,10
+Sugar,10
+Sugar,10
+Sugar,10
+Sugar,10
+Sugar,10
+Sugar,10
+Sugar,10
+Sugar,10
+Sugar,10
+Whipped Cream,10
+Whipped Cream,10
+Whipped Cream,10
+Whipped Cream,10
+Whipped Cream,10
+Whipped Cream,10
+Whipped Cream,10
+Whipped Cream,10
+Whipped Cream,10
+Whipped Cream,10
+
+Menu:
+1,Caffe Americano,$33.00,false
+2,Caffe Americano,$33.00,false
+3,Caffe Americano,$33.00,false
+4,Caffe Americano,$33.00,false
+5,Caffe Americano,$33.00,false
+6,Caffe Americano,$33.00,false
+7,Caffe Americano,$33.00,false
+8,Caffe Americano,$33.00,false
+9,Caffe Americano,$33.00,false
+10,Caffe Americano,$33.00,false
+11,Caffe Latte,$25.50,false
+12,Caffe Latte,$25.50,false
+13,Caffe Latte,$25.50,false
+14,Caffe Latte,$25.50,false
+15,Caffe Latte,$25.50,false
+16,Caffe Latte,$25.50,false
+17,Caffe Latte,$25.50,false
+18,Caffe Latte,$25.50,false
+19,Caffe Latte,$25.50,false
+20,Caffe Latte,$25.50,false
+21,Caffe Mocha,$33.50,true
+22,Caffe Mocha,$33.50,true
+23,Caffe Mocha,$33.50,true
+24,Caffe Mocha,$33.50,true
+25,Caffe Mocha,$33.50,true
+26,Caffe Mocha,$33.50,true
+27,Caffe Mocha,$33.50,true
+28,Caffe Mocha,$33.50,true
+29,Caffe Mocha,$33.50,true
+30,Caffe Mocha,$33.50,true
+31,Cappuccino,$29.00,false
+32,Cappuccino,$29.00,false
+33,Cappuccino,$29.00,false
+34,Cappuccino,$29.00,false
+35,Cappuccino,$29.00,false
+36,Cappuccino,$29.00,false
+37,Cappuccino,$29.00,false
+38,Cappuccino,$29.00,false
+39,Cappuccino,$29.00,false
+40,Cappuccino,$29.00,false
+41,Coffee,$27.50,true
+42,Coffee,$27.50,true
+43,Coffee,$27.50,true
+44,Coffee,$27.50,true
+45,Coffee,$27.50,true
+46,Coffee,$27.50,true
+47,Coffee,$27.50,true
+48,Coffee,$27.50,true
+49,Coffee,$27.50,true
+50,Coffee,$27.50,true
+51,Decaf Coffee,$27.50,true
+52,Decaf Coffee,$27.50,true
+53,Decaf Coffee,$27.50,true
+54,Decaf Coffee,$27.50,true
+55,Decaf Coffee,$27.50,true
+56,Decaf Coffee,$27.50,true
+57,Decaf Coffee,$27.50,true
+58,Decaf Coffee,$27.50,true
+59,Decaf Coffee,$27.50,true
+60,Decaf Coffee,$27.50,true
+
+Your selection: Inventory:
+Cocoa,10
+Cocoa,10
+Cocoa,10
+Cocoa,10
+Cocoa,10
+Cocoa,10
+Cocoa,10
+Cocoa,10
+Cocoa,10
+Cocoa,10
+Coffee,10
+Coffee,10
+Coffee,10
+Coffee,10
+Coffee,10
+Coffee,10
+Coffee,10
+Coffee,10
+Coffee,10
+Coffee,10
+Cream,10
+Cream,10
+Cream,10
+Cream,10
+Cream,10
+Cream,10
+Cream,10
+Cream,10
+Cream,10
+Cream,10
+Decaf Coffee,10
+Decaf Coffee,10
+Decaf Coffee,10
+Decaf Coffee,10
+Decaf Coffee,10
+Decaf Coffee,10
+Decaf Coffee,10
+Decaf Coffee,10
+Decaf Coffee,10
+Decaf Coffee,10
+Espresso,10
+Espresso,10
+Espresso,10
+Espresso,10
+Espresso,10
+Espresso,10
+Espresso,10
+Espresso,10
+Espresso,10
+Espresso,10
+Foamed Milk,10
+Foamed Milk,10
+Foamed Milk,10
+Foamed Milk,10
+Foamed Milk,10
+Foamed Milk,10
+Foamed Milk,10
+Foamed Milk,10
+Foamed Milk,10
+Foamed Milk,10
+Steamed Milk,10
+Steamed Milk,10
+Steamed Milk,10
+Steamed Milk,10
+Steamed Milk,10
+Steamed Milk,10
+Steamed Milk,10
+Steamed Milk,10
+Steamed Milk,10
+Steamed Milk,10
+Sugar,10
+Sugar,10
+Sugar,10
+Sugar,10
+Sugar,10
+Sugar,10
+Sugar,10
+Sugar,10
+Sugar,10
+Sugar,10
+Whipped Cream,10
+Whipped Cream,10
+Whipped Cream,10
+Whipped Cream,10
+Whipped Cream,10
+Whipped Cream,10
+Whipped Cream,10
+Whipped Cream,10
+Whipped Cream,10
+Whipped Cream,10
+
+Menu:
+1,Caffe Americano,$33.00,true
+2,Caffe Americano,$33.00,true
+3,Caffe Americano,$33.00,true
+4,Caffe Americano,$33.00,true
+5,Caffe Americano,$33.00,true
+6,Caffe Americano,$33.00,true
+7,Caffe Americano,$33.00,true
+8,Caffe Americano,$33.00,true
+9,Caffe Americano,$33.00,true
+10,Caffe Americano,$33.00,true
+11,Caffe Latte,$25.50,true
+12,Caffe Latte,$25.50,true
+13,Caffe Latte,$25.50,true
+14,Caffe Latte,$25.50,true
+15,Caffe Latte,$25.50,true
+16,Caffe Latte,$25.50,true
+17,Caffe Latte,$25.50,true
+18,Caffe Latte,$25.50,true
+19,Caffe Latte,$25.50,true
+20,Caffe Latte,$25.50,true
+21,Caffe Mocha,$33.50,true
+22,Caffe Mocha,$33.50,true
+23,Caffe Mocha,$33.50,true
+24,Caffe Mocha,$33.50,true
+25,Caffe Mocha,$33.50,true
+26,Caffe Mocha,$33.50,true
+27,Caffe Mocha,$33.50,true
+28,Caffe Mocha,$33.50,true
+29,Caffe Mocha,$33.50,true
+30,Caffe Mocha,$33.50,true
+31,Cappuccino,$29.00,true
+32,Cappuccino,$29.00,true
+33,Cappuccino,$29.00,true
+34,Cappuccino,$29.00,true
+35,Cappuccino,$29.00,true
+36,Cappuccino,$29.00,true
+37,Cappuccino,$29.00,true
+38,Cappuccino,$29.00,true
+39,Cappuccino,$29.00,true
+40,Cappuccino,$29.00,true
+41,Coffee,$27.50,true
+42,Coffee,$27.50,true
+43,Coffee,$27.50,true
+44,Coffee,$27.50,true
+45,Coffee,$27.50,true
+46,Coffee,$27.50,true
+47,Coffee,$27.50,true
+48,Coffee,$27.50,true
+49,Coffee,$27.50,true
+50,Coffee,$27.50,true
+51,Decaf Coffee,$27.50,true
+52,Decaf Coffee,$27.50,true
+53,Decaf Coffee,$27.50,true
+54,Decaf Coffee,$27.50,true
+55,Decaf Coffee,$27.50,true
+56,Decaf Coffee,$27.50,true
+57,Decaf Coffee,$27.50,true
+58,Decaf Coffee,$27.50,true
+59,Decaf Coffee,$27.50,true
+60,Decaf Coffee,$27.50,true
+
+Your selection: 

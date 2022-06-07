@@ -30,4 +30,11 @@ class CoffeeMachineTest {
         Approvals.verify(SystemOutUtils.convert(output));
     }
 
+    @Test
+    void test_refresh() {
+        ByteArrayOutputStream output = new ApprovalUtilities().writeSystemOutToStringBuffer();
+        CoffeeMachineMock.run("r");
+        Approvals.verify(SystemOutUtils.convert(output));
+    }
+
 }
