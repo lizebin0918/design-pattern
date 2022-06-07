@@ -7,10 +7,12 @@ import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 class CoffeeMachineTest {
 
     @Test
-    void test_one() {
+    void test_all() {
         ByteArrayOutputStream output = new ApprovalUtilities().writeSystemOutToStringBuffer();
         CoffeeMachineMock.run("1");
         CoffeeMachineMock.run("2");
@@ -22,7 +24,7 @@ class CoffeeMachineTest {
     }
 
     @Test
-    void test_two() {
+    void test_one_multiple() {
         ByteArrayOutputStream output = new ApprovalUtilities().writeSystemOutToStringBuffer();
         CoffeeMachineMock.run("1");
         CoffeeMachineMock.run("1");
@@ -31,9 +33,16 @@ class CoffeeMachineTest {
     }
 
     @Test
-    void test_refresh() {
+    void should_refresh() {
         ByteArrayOutputStream output = new ApprovalUtilities().writeSystemOutToStringBuffer();
         CoffeeMachineMock.run("r");
+        Approvals.verify(SystemOutUtils.convert(output));
+    }
+
+    @Test
+    void should_quit() {
+        ByteArrayOutputStream output = new ApprovalUtilities().writeSystemOutToStringBuffer();
+        CoffeeMachineMock.run("q");
         Approvals.verify(SystemOutUtils.convert(output));
     }
 

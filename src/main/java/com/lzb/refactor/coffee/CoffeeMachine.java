@@ -27,6 +27,7 @@ public class CoffeeMachine {
     }
 
     public static void startIO() {
+        // 通过设置全局输入流：System.setIn();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String input = "";
 
@@ -37,7 +38,9 @@ public class CoffeeMachine {
                 if (input.equals("")) {
                     continue;
                 } else if (input.equals("q")) {
-                    System.exit(0);
+                    // 这里要改成break，逻辑没变
+                    // System.exit(0);
+                    break;
                 } else if (input.equals("r")) {
                     restockIngredients();
                     updateMakeable();

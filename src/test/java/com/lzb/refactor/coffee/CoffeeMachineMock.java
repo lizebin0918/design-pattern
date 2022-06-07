@@ -25,7 +25,7 @@ public class CoffeeMachineMock extends CoffeeMachine {
                 return;
             }
             if (input.equals("q")) {
-                System.exit(0);
+                return;
             } else if (input.equals("r")) {
                 restockIngredients();
                 updateMakeable();
