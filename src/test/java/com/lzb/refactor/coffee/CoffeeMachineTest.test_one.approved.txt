@@ -688,4 +688,4 @@ Menu:
 35,Decaf Coffee,$16.50,true
 36,Decaf Coffee,$16.50,true
 
-Your selection:
+Your selection: 
