@@ -1,6 +1,5 @@
 package com.lzb.company.product_query;
 
-import com.lzb.cider.product_query.filter.*;
 import com.lzb.company.product_query.filter.AndFilter;
 import com.lzb.company.product_query.filter.ColorFilter;
 import com.lzb.company.product_query.filter.PriceRangeFilter;

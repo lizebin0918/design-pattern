@@ -1,4 +1,4 @@
-package com.lzb.cider.product_query;
+package com.lzb.company.product_query;
 
 import com.lzb.company.product_query.Color;
 import com.lzb.company.product_query.Product;
