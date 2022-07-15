@@ -1,8 +1,12 @@
 package com.lzb.refactor.employee.original;
 
-public class Engineer extends EmployeeType {
-    @Override
-    public int getTypeCode() {
-        return 1;
+public class Engineer extends Employee {
+
+    public Engineer(int monthlySalary, int commission, int bonus) {
+        super(EmployeeType.ENGINEER, monthlySalary, commission, bonus);
+    }
+
+    public int calcPayAmount() {
+        return getMonthlySalary();
     }
 }

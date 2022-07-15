@@ -1,33 +1,22 @@
 package com.lzb.refactor.employee.original;
 
-public class Employee {
+import lombok.Data;
 
-    private EmployeeType type;
+@Data
+public abstract class Employee {
+
+    private int type;
     private int monthlySalary;
     private int commission;
     private int bonus;
 
-    public Employee(EmployeeType type, int monthlySalary, int commission, int bonus) {
+    Employee(int type, int monthlySalary, int commission, int bonus) {
         this.type = type;
         this.monthlySalary = monthlySalary;
         this.commission = commission;
         this.bonus = bonus;
     }
 
-    private int getType() {
-        return type.getTypeCode();
-    }
+    public abstract int calcPayAmount();
 
-    public int calcPayAmount() {
-        switch (getType()) {
-            case EmployeeType.ENGINEER:
-                return monthlySalary;
-            case EmployeeType.SALESMAN:
-                return monthlySalary + commission;
-            case EmployeeType.MANAGER:
-                return monthlySalary + bonus;
-            default:
-                throw new RuntimeException("Incorrect Employee");
-        }
-    }
 }
