@@ -1,4 +1,4 @@
-package com.lzb.refactor.employ.original;
+package com.lzb.refactor.employee.original;
 
 public class Salesman extends EmployeeType {
     @Override

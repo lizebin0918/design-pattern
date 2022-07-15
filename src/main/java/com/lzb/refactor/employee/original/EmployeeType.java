@@ -1,4 +1,4 @@
-package com.lzb.refactor.employ.original;
+package com.lzb.refactor.employee.original;
 
 public abstract class EmployeeType {
     public static final int ENGINEER = 1;

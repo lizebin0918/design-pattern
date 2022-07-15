@@ -1,9 +1,9 @@
 package com.lzb.refactor.employ;
 
-import com.lzb.refactor.employ.original.Employee;
-import com.lzb.refactor.employ.original.Engineer;
-import com.lzb.refactor.employ.original.Manager;
-import com.lzb.refactor.employ.original.Salesman;
+import com.lzb.refactor.employee.original.Employee;
+import com.lzb.refactor.employee.original.Engineer;
+import com.lzb.refactor.employee.original.Manager;
+import com.lzb.refactor.employee.original.Salesman;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
