@@ -1,6 +1,11 @@
 package com.lzb.cider.product_query;
 
-import com.lzb.cider.product_query.specification.*;
+import com.lzb.company.product_query.Color;
+import com.lzb.company.product_query.Product;
+import com.lzb.company.product_query.Products;
+import com.lzb.company.product_query.Range;
+import com.lzb.company.product_query.specification.ExpressionSpecification;
+import com.lzb.company.product_query.specification.ISpecification;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
