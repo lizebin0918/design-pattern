@@ -13,6 +13,8 @@ public class SystemOutUtils {
 
     public static final String LINE = "\n";
 
+    public static final String A = "a";
+
     /**
      * 打印
      *
