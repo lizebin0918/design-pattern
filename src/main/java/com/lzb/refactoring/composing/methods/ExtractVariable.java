@@ -1,4 +1,4 @@
-package com.lzb.refactoring;
+package com.lzb.refactoring.composing.methods;
 
 /**
  * 提取变量<br/>

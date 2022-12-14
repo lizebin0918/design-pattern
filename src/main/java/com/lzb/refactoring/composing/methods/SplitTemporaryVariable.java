@@ -1,4 +1,4 @@
-package com.lzb.refactoring;
+package com.lzb.refactoring.composing.methods;
 
 /**
  * 拆分临时变量<br/>

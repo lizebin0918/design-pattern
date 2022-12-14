@@ -1,4 +1,4 @@
-package com.lzb.refactoring;
+package com.lzb.refactoring.composing.methods;
 
 /**
  * 禁止对参数赋值<br/>
@@ -16,7 +16,7 @@ public class RemoveAssignmentsToParameters {
     }
 
     ///////////////////////////////////////////////////////////////////////////
-    //
+    // 重构后：防止对外部变量产生副作用
     ///////////////////////////////////////////////////////////////////////////
 
     int discount1(int inputVal, int quantity) {

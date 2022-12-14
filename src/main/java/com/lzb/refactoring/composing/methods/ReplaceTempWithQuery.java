@@ -1,4 +1,4 @@
-package com.lzb.refactoring;
+package com.lzb.refactoring.composing.methods;
 
 /**
  * 放大了"basePrice"的作用域<br/>
@@ -20,7 +20,7 @@ public class ReplaceTempWithQuery {
     }
 
     ///////////////////////////////////////////////////////////////////////////
-    //
+    // 重构后：扩大了 basePrice 的作用域
     ///////////////////////////////////////////////////////////////////////////
 
     double calculateTotal1() {

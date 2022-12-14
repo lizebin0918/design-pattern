@@ -1,4 +1,4 @@
-package com.lzb.refactoring;
+package com.lzb.refactoring.composing.methods;
 
 /**
  * <br/>
@@ -18,7 +18,7 @@ public class ReplaceMethodWithMethodObject {
     }
 
     ///////////////////////////////////////////////////////////////////////////
-    //
+    // 重构后：这里的 Order1 order 就是聚合读模型，有些时候外部业务需要依赖【读模型】，而不是把这块逻辑封装到【读模型】
     ///////////////////////////////////////////////////////////////////////////
 
     class Order1 {

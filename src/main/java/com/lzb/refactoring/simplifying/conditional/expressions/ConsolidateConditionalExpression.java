@@ -1,4 +1,4 @@
-package com.lzb.refactoring;
+package com.lzb.refactoring.simplifying.conditional.expressions;
 
 /**
  * 合并条件<br/>

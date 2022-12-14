@@ -1,4 +1,4 @@
-package com.lzb.refactoring;
+package com.lzb.refactoring.organizing.data;
 
 /**
  * 封装<br/>
