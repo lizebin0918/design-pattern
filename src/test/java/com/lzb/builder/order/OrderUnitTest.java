@@ -3,6 +3,7 @@ package com.lzb.builder.order;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 import com.alibaba.fastjson.JSON;
 import com.lzb.builder.valueObj.FullName;
@@ -73,6 +74,19 @@ class OrderUnitTest {
                 .atPlace(LocalDate.of(2023, 1,1).atStartOfDay())
                 .payAmount(BigDecimal.ONE).orderAddress("", new FullName("li", "zebin"));
         Assertions.assertThrows(IllegalArgumentException.class, () -> orderBuilder.validate().build());
+    }
+
+    @Test
+    void test_address_null() {
+        Order order = Order.builder()
+                .orderId(1L)
+                .atPlace(LocalDate.of(2023, 1, 1).atStartOfDay())
+                .payAmount(BigDecimal.ONE).build();
+        String firstName = Optional.ofNullable(order.getOrderAddress())
+                .map(OrderAddress::getFullName)
+                .map(FullName::getFirstName)
+                .orElse(null);
+        Assertions.assertNull(firstName);
     }
 
 }

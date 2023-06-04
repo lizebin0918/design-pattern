@@ -2,6 +2,7 @@ package com.lzb.builder.order;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 import com.lzb.builder.valueObj.FullName;
 import lombok.AllArgsConstructor;
@@ -32,6 +33,8 @@ public class Order {
 
     @NonNull
     private final OrderAddress orderAddress;
+
+    private Optional<OrderAddress> deliveryAddress;
 
     Order(OrderBuilder orderBuilder) {
         orderId = orderBuilder.orderId;
