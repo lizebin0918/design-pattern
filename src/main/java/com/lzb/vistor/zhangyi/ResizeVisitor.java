@@ -5,7 +5,7 @@ package com.lzb.vistor.zhangyi;
  * Created on : 2023-06-06 10:16
  * @author lizebin
  */
-public class ResizeVisitor implements IVideoMediaVisitor, IRmVisitor, IMpegVisitor {
+public class ResizeVisitor implements IRmVisitor, IMpegVisitor {
 
     @Override
     public void visit(Rm rm) {
