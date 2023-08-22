@@ -9,7 +9,7 @@ import com.lzb.factory.yanmoshejimoshi.product.ProductB2;
  *
  * @author lizebin
  */
-public class Factory2 implements AbstractFactory {
+public class FactoryProductA2B2 implements AbstractFactory {
 
 
     @Override

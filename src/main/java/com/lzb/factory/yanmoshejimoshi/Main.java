@@ -1,7 +1,7 @@
 package com.lzb.factory.yanmoshejimoshi;
 
-import com.lzb.factory.yanmoshejimoshi.factory.Factory1;
-import com.lzb.factory.yanmoshejimoshi.factory.Factory2;
+import com.lzb.factory.yanmoshejimoshi.factory.FactoryProductA1B1;
+import com.lzb.factory.yanmoshejimoshi.factory.FactoryProductA2B2;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -18,13 +18,13 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Factory1 factory1 = new Factory1();
-        log.info("factory1.productA:{}",  factory1.getProductA().getName());
-        log.info("factory1.productB:{}",  factory1.getProductB().getName());
+        FactoryProductA1B1 factoryProductA1B1 = new FactoryProductA1B1();
+        log.info("FactoryProductA1B1.productA:{}",  factoryProductA1B1.getProductA().getName());
+        log.info("FactoryProductA1B1.productB:{}",  factoryProductA1B1.getProductB().getName());
 
-        Factory2 factory2 = new Factory2();
-        log.info("factory2.productA:{}",  factory2.getProductA().getName());
-        log.info("factory2.productB:{}",  factory2.getProductB().getName());
+        FactoryProductA2B2 factoryProductA2B2 = new FactoryProductA2B2();
+        log.info("factoryProductA2B2.productA:{}",  factoryProductA2B2.getProductA().getName());
+        log.info("factoryProductA2B2.productB:{}",  factoryProductA2B2.getProductB().getName());
     }
 
 }
