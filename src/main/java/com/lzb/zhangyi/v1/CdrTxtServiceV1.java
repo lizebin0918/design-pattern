@@ -2,7 +2,6 @@ package com.lzb.zhangyi.v1;
 
 import java.util.List;
 
-import com.lzb.zhangyi.CMCdr;
 import com.lzb.zhangyi.CUCdr;
 
 /**
@@ -10,7 +9,7 @@ import com.lzb.zhangyi.CUCdr;
  * Created on : 2023-08-24 22:57
  * @author mac
  */
-public class CdrTxtService {
+public class CdrTxtServiceV1 {
 
     /**
      * 读取
