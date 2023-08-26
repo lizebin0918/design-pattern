@@ -8,11 +8,11 @@ import com.lzb.bridge.yanmoshejimoshi.v2.sender.MessageSender;
  *
  * @author lizebin
  */
-public abstract class AbstractMessage {
+public abstract class Message {
 
     private final MessageSender messageSender;
 
-    AbstractMessage(MessageSender messageSender) {
+    Message(MessageSender messageSender) {
         this.messageSender = messageSender;
     }
 
