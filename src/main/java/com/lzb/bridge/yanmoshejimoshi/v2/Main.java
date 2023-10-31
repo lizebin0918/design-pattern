@@ -15,7 +15,7 @@ public class Main {
 
         // 普通消息采用站内消息
         SmsMessageSender smsMessageSender = new SmsMessageSender();
-        AbstractMessage commonMessage = new CommonMessage(smsMessageSender);
+        Message commonMessage = new CommonMessage(smsMessageSender);
         commonMessage.send("你好", "lizebin");
 
         // 加急消息采用邮件
@@ -23,6 +23,12 @@ public class Main {
         UrgencyMessage urgencyMessaage = new UrgencyMessage(emailMessageSender);
         urgencyMessaage.send("线上出bug了", "lizebin");
 
+        // 普通消息采用邮件发送
+        Message commonMessage2 = new CommonMessage(emailMessageSender);
+        commonMessage2.send("你好", "这是普通消息用邮件发送");
+
     }
+
+
 
 }

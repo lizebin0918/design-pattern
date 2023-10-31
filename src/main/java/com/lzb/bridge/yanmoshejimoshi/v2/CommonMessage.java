@@ -8,7 +8,7 @@ import com.lzb.bridge.yanmoshejimoshi.v2.sender.MessageSender;
  *
  * @author lizebin
  */
-public class CommonMessage extends AbstractMessage {
+public class CommonMessage extends Message {
 
     CommonMessage(MessageSender messageSender) {
         super(messageSender);

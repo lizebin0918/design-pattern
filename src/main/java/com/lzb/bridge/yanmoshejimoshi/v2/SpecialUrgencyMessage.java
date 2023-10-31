@@ -8,7 +8,7 @@ import com.lzb.bridge.yanmoshejimoshi.v2.sender.MessageSender;
  *
  * @author lizebin
  */
-public class SpecialUrgencyMessage extends AbstractMessage {
+public class SpecialUrgencyMessage extends Message {
 
     SpecialUrgencyMessage(MessageSender messageSender) {
         super(messageSender);
