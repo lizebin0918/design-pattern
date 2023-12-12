@@ -1,5 +1,7 @@
 package com.lzb.vistor.gt.v2;
 
+import com.lzb.decorator.demo1.v2.Test;
+import com.lzb.vistor.gt.v2.extractor.Compressor;
 import com.lzb.vistor.gt.v2.extractor.Extractor;
 
 import java.util.ArrayList;
@@ -32,8 +34,10 @@ public class Main {
 
     public static void main(String[] args) {
         Extractor extractor = new Extractor();
+        Compressor compressor = new Compressor();
         for (ResourceFile resourceFile : listAllResourceFiles("")) {
             resourceFile.accept(extractor);
+            resourceFile.accept(compressor);
         }
     }
 
