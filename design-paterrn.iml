@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4" />
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="25d5c5c6-1847-44c5-b488-0efee544e9de" />
+  </component>
+</module>
