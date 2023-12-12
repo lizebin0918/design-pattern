@@ -21,6 +21,7 @@ public class DataView {
 
     // 展示
     public void show(Visitor visitor) {
+        // 不同visitor，展示不同的数据
         for (User user : userList) {
             user.accept(visitor);
         }
